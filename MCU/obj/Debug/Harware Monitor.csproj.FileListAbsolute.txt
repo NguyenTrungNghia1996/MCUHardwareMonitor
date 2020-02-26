@@ -1,0 +1,16 @@
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MCU.exe.config
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MCU.exe
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MCU.pdb
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MetroFramework.Design.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MetroFramework.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\OpenHardwareMonitorLib.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\bin\Debug\XanderUI.dll
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\Harware Monitor.csprojAssemblyReference.cache
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\MCU.Home.resources
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\MCU.Properties.Resources.resources
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\Harware Monitor.csproj.GenerateResource.cache
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\MCU.exe
+C:\Users\nghia\Desktop\C#\MCU\MCU\obj\Debug\MCU.pdb
