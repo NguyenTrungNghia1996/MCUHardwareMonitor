@@ -32,6 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuTab = new MetroFramework.Controls.MetroTabControl();
             this.tabMonitor = new MetroFramework.Controls.MetroTabPage();
+            this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
+            this.cbbCom = new System.Windows.Forms.ComboBox();
+            this.btnReload = new Bunifu.Framework.UI.BunifuImageButton();
+            this.swWiredAuto = new Bunifu.Framework.UI.BunifuSwitch();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblStatusWired = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnWired = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCards6 = new Bunifu.Framework.UI.BunifuCards();
+            this.swWifiAuto = new Bunifu.Framework.UI.BunifuSwitch();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblStatusWifi = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btnConnectWIFI = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.txtIP = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblCPUName = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -71,8 +90,13 @@
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.psGPULoad = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.AppIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuTab.SuspendLayout();
             this.tabMonitor.SuspendLayout();
+            this.bunifuCards4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReload)).BeginInit();
+            this.bunifuCards6.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards3.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
@@ -86,12 +110,14 @@
             this.menuTab.Margin = new System.Windows.Forms.Padding(5);
             this.menuTab.Name = "menuTab";
             this.menuTab.SelectedIndex = 0;
-            this.menuTab.Size = new System.Drawing.Size(595, 861);
+            this.menuTab.Size = new System.Drawing.Size(608, 868);
             this.menuTab.TabIndex = 0;
             this.menuTab.UseSelectable = true;
             // 
             // tabMonitor
             // 
+            this.tabMonitor.Controls.Add(this.bunifuCards4);
+            this.tabMonitor.Controls.Add(this.bunifuCards6);
             this.tabMonitor.Controls.Add(this.bunifuCards1);
             this.tabMonitor.Controls.Add(this.bunifuCards3);
             this.tabMonitor.Controls.Add(this.bunifuCards2);
@@ -100,17 +126,310 @@
             this.tabMonitor.HorizontalScrollbarSize = 10;
             this.tabMonitor.Location = new System.Drawing.Point(4, 38);
             this.tabMonitor.Name = "tabMonitor";
-            this.tabMonitor.Size = new System.Drawing.Size(587, 819);
+            this.tabMonitor.Size = new System.Drawing.Size(600, 826);
             this.tabMonitor.TabIndex = 0;
             this.tabMonitor.Text = "Monitor";
             this.tabMonitor.VerticalScrollbarBarColor = true;
             this.tabMonitor.VerticalScrollbarHighlightOnWheel = false;
             this.tabMonitor.VerticalScrollbarSize = 10;
             // 
+            // bunifuCards4
+            // 
+            this.bunifuCards4.BackColor = System.Drawing.Color.White;
+            this.bunifuCards4.BorderRadius = 9;
+            this.bunifuCards4.BottomSahddow = true;
+            this.bunifuCards4.color = System.Drawing.Color.Tomato;
+            this.bunifuCards4.Controls.Add(this.cbbCom);
+            this.bunifuCards4.Controls.Add(this.btnReload);
+            this.bunifuCards4.Controls.Add(this.swWiredAuto);
+            this.bunifuCards4.Controls.Add(this.bunifuCustomLabel14);
+            this.bunifuCards4.Controls.Add(this.lblStatusWired);
+            this.bunifuCards4.Controls.Add(this.bunifuCustomLabel17);
+            this.bunifuCards4.Controls.Add(this.btnWired);
+            this.bunifuCards4.Controls.Add(this.bunifuCustomLabel13);
+            this.bunifuCards4.Controls.Add(this.bunifuCustomLabel12);
+            this.bunifuCards4.LeftSahddow = true;
+            this.bunifuCards4.Location = new System.Drawing.Point(0, 625);
+            this.bunifuCards4.Name = "bunifuCards4";
+            this.bunifuCards4.RightSahddow = true;
+            this.bunifuCards4.ShadowDepth = 20;
+            this.bunifuCards4.Size = new System.Drawing.Size(594, 160);
+            this.bunifuCards4.TabIndex = 10;
+            // 
+            // cbbCom
+            // 
+            this.cbbCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbCom.FormattingEnabled = true;
+            this.cbbCom.Location = new System.Drawing.Point(84, 69);
+            this.cbbCom.Name = "cbbCom";
+            this.cbbCom.Size = new System.Drawing.Size(218, 41);
+            this.cbbCom.TabIndex = 24;
+            // 
+            // btnReload
+            // 
+            this.btnReload.BackColor = System.Drawing.Color.Transparent;
+            this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReload.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.Image")));
+            this.btnReload.ImageActive = null;
+            this.btnReload.Location = new System.Drawing.Point(308, 66);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(44, 44);
+            this.btnReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReload.TabIndex = 23;
+            this.btnReload.TabStop = false;
+            this.btnReload.Zoom = 10;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // swWiredAuto
+            // 
+            this.swWiredAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.swWiredAuto.BorderRadius = 5;
+            this.swWiredAuto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.swWiredAuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.swWiredAuto.Location = new System.Drawing.Point(518, 31);
+            this.swWiredAuto.Name = "swWiredAuto";
+            this.swWiredAuto.Oncolor = System.Drawing.Color.SeaGreen;
+            this.swWiredAuto.Onoffcolor = System.Drawing.Color.Gray;
+            this.swWiredAuto.Size = new System.Drawing.Size(51, 19);
+            this.swWiredAuto.TabIndex = 21;
+            this.swWiredAuto.Textcolor = System.Drawing.Color.White;
+            this.swWiredAuto.Value = false;
+            this.swWiredAuto.Click += new System.EventHandler(this.swWiredAuto_Click);
+            // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(409, 27);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(100, 21);
+            this.bunifuCustomLabel14.TabIndex = 20;
+            this.bunifuCustomLabel14.Text = "AutoConnect";
+            // 
+            // lblStatusWired
+            // 
+            this.lblStatusWired.AutoSize = true;
+            this.lblStatusWired.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusWired.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblStatusWired.Location = new System.Drawing.Point(97, 124);
+            this.lblStatusWired.Name = "lblStatusWired";
+            this.lblStatusWired.Size = new System.Drawing.Size(97, 25);
+            this.lblStatusWired.TabIndex = 19;
+            this.lblStatusWired.Text = "Standby ";
+            // 
+            // bunifuCustomLabel17
+            // 
+            this.bunifuCustomLabel17.AutoSize = true;
+            this.bunifuCustomLabel17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(12, 124);
+            this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
+            this.bunifuCustomLabel17.Size = new System.Drawing.Size(79, 25);
+            this.bunifuCustomLabel17.TabIndex = 18;
+            this.bunifuCustomLabel17.Text = "Status:";
+            // 
+            // btnWired
+            // 
+            this.btnWired.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnWired.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnWired.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnWired.BorderRadius = 0;
+            this.btnWired.ButtonText = "Connect";
+            this.btnWired.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWired.DisabledColor = System.Drawing.Color.Gray;
+            this.btnWired.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnWired.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnWired.Iconimage")));
+            this.btnWired.Iconimage_right = null;
+            this.btnWired.Iconimage_right_Selected = null;
+            this.btnWired.Iconimage_Selected = null;
+            this.btnWired.IconMarginLeft = 0;
+            this.btnWired.IconMarginRight = 0;
+            this.btnWired.IconRightVisible = true;
+            this.btnWired.IconRightZoom = 0D;
+            this.btnWired.IconVisible = true;
+            this.btnWired.IconZoom = 90D;
+            this.btnWired.IsTab = false;
+            this.btnWired.Location = new System.Drawing.Point(358, 66);
+            this.btnWired.Name = "btnWired";
+            this.btnWired.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnWired.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnWired.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnWired.selected = false;
+            this.btnWired.Size = new System.Drawing.Size(129, 44);
+            this.btnWired.TabIndex = 17;
+            this.btnWired.Text = "Connect";
+            this.btnWired.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnWired.Textcolor = System.Drawing.Color.White;
+            this.btnWired.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWired.Click += new System.EventHandler(this.btnWired_Click);
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(4, 79);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(76, 25);
+            this.bunifuCustomLabel13.TabIndex = 10;
+            this.bunifuCustomLabel13.Text = "PORT:";
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(3, 16);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(224, 32);
+            this.bunifuCustomLabel12.TabIndex = 9;
+            this.bunifuCustomLabel12.Text = "Wired Connection";
+            // 
+            // bunifuCards6
+            // 
+            this.bunifuCards6.BackColor = System.Drawing.Color.White;
+            this.bunifuCards6.BorderRadius = 9;
+            this.bunifuCards6.BottomSahddow = true;
+            this.bunifuCards6.color = System.Drawing.Color.Tomato;
+            this.bunifuCards6.Controls.Add(this.swWifiAuto);
+            this.bunifuCards6.Controls.Add(this.bunifuCustomLabel11);
+            this.bunifuCards6.Controls.Add(this.lblStatusWifi);
+            this.bunifuCards6.Controls.Add(this.bunifuCustomLabel19);
+            this.bunifuCards6.Controls.Add(this.btnConnectWIFI);
+            this.bunifuCards6.Controls.Add(this.txtIP);
+            this.bunifuCards6.Controls.Add(this.bunifuCustomLabel20);
+            this.bunifuCards6.Controls.Add(this.bunifuCustomLabel22);
+            this.bunifuCards6.LeftSahddow = true;
+            this.bunifuCards6.Location = new System.Drawing.Point(0, 446);
+            this.bunifuCards6.Name = "bunifuCards6";
+            this.bunifuCards6.RightSahddow = true;
+            this.bunifuCards6.ShadowDepth = 20;
+            this.bunifuCards6.Size = new System.Drawing.Size(594, 163);
+            this.bunifuCards6.TabIndex = 9;
+            // 
+            // swWifiAuto
+            // 
+            this.swWifiAuto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.swWifiAuto.BorderRadius = 5;
+            this.swWifiAuto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.swWifiAuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.swWifiAuto.Location = new System.Drawing.Point(518, 28);
+            this.swWifiAuto.Name = "swWifiAuto";
+            this.swWifiAuto.Oncolor = System.Drawing.Color.SeaGreen;
+            this.swWifiAuto.Onoffcolor = System.Drawing.Color.Gray;
+            this.swWifiAuto.Size = new System.Drawing.Size(51, 19);
+            this.swWifiAuto.TabIndex = 16;
+            this.swWifiAuto.Textcolor = System.Drawing.Color.White;
+            this.swWifiAuto.Value = false;
+            this.swWifiAuto.Click += new System.EventHandler(this.swWifiAuto_Click);
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(409, 26);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(100, 21);
+            this.bunifuCustomLabel11.TabIndex = 15;
+            this.bunifuCustomLabel11.Text = "AutoConnect";
+            // 
+            // lblStatusWifi
+            // 
+            this.lblStatusWifi.AutoSize = true;
+            this.lblStatusWifi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusWifi.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblStatusWifi.Location = new System.Drawing.Point(98, 124);
+            this.lblStatusWifi.Name = "lblStatusWifi";
+            this.lblStatusWifi.Size = new System.Drawing.Size(97, 25);
+            this.lblStatusWifi.TabIndex = 13;
+            this.lblStatusWifi.Text = "Standby ";
+            // 
+            // bunifuCustomLabel19
+            // 
+            this.bunifuCustomLabel19.AutoSize = true;
+            this.bunifuCustomLabel19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel19.Location = new System.Drawing.Point(13, 124);
+            this.bunifuCustomLabel19.Name = "bunifuCustomLabel19";
+            this.bunifuCustomLabel19.Size = new System.Drawing.Size(79, 25);
+            this.bunifuCustomLabel19.TabIndex = 12;
+            this.bunifuCustomLabel19.Text = "Status:";
+            // 
+            // btnConnectWIFI
+            // 
+            this.btnConnectWIFI.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnConnectWIFI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnConnectWIFI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConnectWIFI.BorderRadius = 0;
+            this.btnConnectWIFI.ButtonText = "Connect";
+            this.btnConnectWIFI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConnectWIFI.DisabledColor = System.Drawing.Color.Gray;
+            this.btnConnectWIFI.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnConnectWIFI.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnConnectWIFI.Iconimage")));
+            this.btnConnectWIFI.Iconimage_right = null;
+            this.btnConnectWIFI.Iconimage_right_Selected = null;
+            this.btnConnectWIFI.Iconimage_Selected = null;
+            this.btnConnectWIFI.IconMarginLeft = 0;
+            this.btnConnectWIFI.IconMarginRight = 0;
+            this.btnConnectWIFI.IconRightVisible = true;
+            this.btnConnectWIFI.IconRightZoom = 0D;
+            this.btnConnectWIFI.IconVisible = true;
+            this.btnConnectWIFI.IconZoom = 90D;
+            this.btnConnectWIFI.IsTab = false;
+            this.btnConnectWIFI.Location = new System.Drawing.Point(358, 67);
+            this.btnConnectWIFI.Name = "btnConnectWIFI";
+            this.btnConnectWIFI.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnConnectWIFI.OnHovercolor = System.Drawing.Color.SeaGreen;
+            this.btnConnectWIFI.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConnectWIFI.selected = false;
+            this.btnConnectWIFI.Size = new System.Drawing.Size(129, 44);
+            this.btnConnectWIFI.TabIndex = 11;
+            this.btnConnectWIFI.Text = "Connect";
+            this.btnConnectWIFI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConnectWIFI.Textcolor = System.Drawing.Color.White;
+            this.btnConnectWIFI.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnectWIFI.Click += new System.EventHandler(this.btnConnectWIFI_Click);
+            // 
+            // txtIP
+            // 
+            this.txtIP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIP.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtIP.HintForeColor = System.Drawing.Color.Empty;
+            this.txtIP.HintText = "";
+            this.txtIP.isPassword = false;
+            this.txtIP.LineFocusedColor = System.Drawing.Color.Green;
+            this.txtIP.LineIdleColor = System.Drawing.Color.Gray;
+            this.txtIP.LineMouseHoverColor = System.Drawing.Color.Green;
+            this.txtIP.LineThickness = 3;
+            this.txtIP.Location = new System.Drawing.Point(84, 67);
+            this.txtIP.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIP.Name = "txtIP";
+            this.txtIP.Size = new System.Drawing.Size(218, 44);
+            this.txtIP.TabIndex = 10;
+            this.txtIP.Text = "192.168.123.125";
+            this.txtIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(13, 77);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(37, 25);
+            this.bunifuCustomLabel20.TabIndex = 9;
+            this.bunifuCustomLabel20.Text = "IP:";
+            // 
+            // bunifuCustomLabel22
+            // 
+            this.bunifuCustomLabel22.AutoSize = true;
+            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Segoe UI Historic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(9, 13);
+            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(252, 32);
+            this.bunifuCustomLabel22.TabIndex = 8;
+            this.bunifuCustomLabel22.Text = "Wireless Connection";
+            // 
             // bunifuCards1
             // 
             this.bunifuCards1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCards1.BorderRadius = 4;
+            this.bunifuCards1.BorderRadius = 9;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.MediumTurquoise;
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel2);
@@ -129,7 +448,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 50;
-            this.bunifuCards1.Size = new System.Drawing.Size(349, 217);
+            this.bunifuCards1.Size = new System.Drawing.Size(356, 217);
             this.bunifuCards1.TabIndex = 7;
             // 
             // bunifuCustomLabel2
@@ -290,7 +609,7 @@
             // 
             this.bunifuCards3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCards3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bunifuCards3.BorderRadius = 4;
+            this.bunifuCards3.BorderRadius = 9;
             this.bunifuCards3.BottomSahddow = true;
             this.bunifuCards3.color = System.Drawing.Color.MediumTurquoise;
             this.bunifuCards3.Controls.Add(this.lblRamTotal);
@@ -307,7 +626,7 @@
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 50;
-            this.bunifuCards3.Size = new System.Drawing.Size(228, 217);
+            this.bunifuCards3.Size = new System.Drawing.Size(235, 217);
             this.bunifuCards3.TabIndex = 5;
             // 
             // lblRamTotal
@@ -435,7 +754,7 @@
             // bunifuCards2
             // 
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
-            this.bunifuCards2.BorderRadius = 4;
+            this.bunifuCards2.BorderRadius = 9;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.MediumTurquoise;
             this.bunifuCards2.Controls.Add(this.lblGPUName);
@@ -458,7 +777,7 @@
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 50;
-            this.bunifuCards2.Size = new System.Drawing.Size(587, 217);
+            this.bunifuCards2.Size = new System.Drawing.Size(594, 217);
             this.bunifuCards2.TabIndex = 3;
             // 
             // lblGPUName
@@ -671,19 +990,28 @@
             // 
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // AppIcon
+            // 
+            this.AppIcon.Text = "MCU";
+            this.AppIcon.Visible = true;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(635, 941);
+            this.ClientSize = new System.Drawing.Size(648, 948);
             this.Controls.Add(this.menuTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.Text = "Hardware Monitor";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.menuTab.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
+            this.bunifuCards4.ResumeLayout(false);
+            this.bunifuCards4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReload)).EndInit();
+            this.bunifuCards6.ResumeLayout(false);
+            this.bunifuCards6.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.bunifuCards3.ResumeLayout(false);
@@ -737,5 +1065,26 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblRamLoad;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel lblRamTotal;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards6;
+        private Bunifu.Framework.UI.BunifuSwitch swWifiAuto;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblStatusWifi;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
+        private Bunifu.Framework.UI.BunifuFlatButton btnConnectWIFI;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtIP;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards4;
+        private Bunifu.Framework.UI.BunifuImageButton btnReload;
+        private Bunifu.Framework.UI.BunifuSwitch swWiredAuto;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblStatusWired;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
+        private Bunifu.Framework.UI.BunifuFlatButton btnWired;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private System.Windows.Forms.ComboBox cbbCom;
+        private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.NotifyIcon AppIcon;
     }
 }
