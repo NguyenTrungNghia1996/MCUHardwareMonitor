@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuTab = new MetroFramework.Controls.MetroTabControl();
             this.tabMonitor = new MetroFramework.Controls.MetroTabPage();
+            this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.cbbCom = new System.Windows.Forms.ComboBox();
             this.btnReload = new Bunifu.Framework.UI.BunifuImageButton();
@@ -92,8 +94,10 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.AppIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblNet = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.menuTab.SuspendLayout();
             this.tabMonitor.SuspendLayout();
+            this.bunifuCards5.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReload)).BeginInit();
             this.bunifuCards6.SuspendLayout();
@@ -116,6 +120,7 @@
             // 
             // tabMonitor
             // 
+            this.tabMonitor.Controls.Add(this.bunifuCards5);
             this.tabMonitor.Controls.Add(this.bunifuCards4);
             this.tabMonitor.Controls.Add(this.bunifuCards6);
             this.tabMonitor.Controls.Add(this.bunifuCards1);
@@ -133,6 +138,32 @@
             this.tabMonitor.VerticalScrollbarHighlightOnWheel = false;
             this.tabMonitor.VerticalScrollbarSize = 10;
             // 
+            // bunifuCards5
+            // 
+            this.bunifuCards5.BackColor = System.Drawing.Color.White;
+            this.bunifuCards5.BorderRadius = 5;
+            this.bunifuCards5.BottomSahddow = true;
+            this.bunifuCards5.color = System.Drawing.Color.Tomato;
+            this.bunifuCards5.Controls.Add(this.lblNet);
+            this.bunifuCards5.Controls.Add(this.bunifuCustomLabel16);
+            this.bunifuCards5.LeftSahddow = true;
+            this.bunifuCards5.Location = new System.Drawing.Point(0, 444);
+            this.bunifuCards5.Name = "bunifuCards5";
+            this.bunifuCards5.RightSahddow = true;
+            this.bunifuCards5.ShadowDepth = 20;
+            this.bunifuCards5.Size = new System.Drawing.Size(594, 47);
+            this.bunifuCards5.TabIndex = 11;
+            // 
+            // bunifuCustomLabel16
+            // 
+            this.bunifuCustomLabel16.AutoSize = true;
+            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(4, 12);
+            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(162, 25);
+            this.bunifuCustomLabel16.TabIndex = 9;
+            this.bunifuCustomLabel16.Text = "Intrernet Speed:";
+            // 
             // bunifuCards4
             // 
             this.bunifuCards4.BackColor = System.Drawing.Color.White;
@@ -149,7 +180,7 @@
             this.bunifuCards4.Controls.Add(this.bunifuCustomLabel13);
             this.bunifuCards4.Controls.Add(this.bunifuCustomLabel12);
             this.bunifuCards4.LeftSahddow = true;
-            this.bunifuCards4.Location = new System.Drawing.Point(0, 625);
+            this.bunifuCards4.Location = new System.Drawing.Point(0, 666);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = true;
             this.bunifuCards4.ShadowDepth = 20;
@@ -297,7 +328,7 @@
             this.bunifuCards6.Controls.Add(this.bunifuCustomLabel20);
             this.bunifuCards6.Controls.Add(this.bunifuCustomLabel22);
             this.bunifuCards6.LeftSahddow = true;
-            this.bunifuCards6.Location = new System.Drawing.Point(0, 446);
+            this.bunifuCards6.Location = new System.Drawing.Point(0, 497);
             this.bunifuCards6.Name = "bunifuCards6";
             this.bunifuCards6.RightSahddow = true;
             this.bunifuCards6.ShadowDepth = 20;
@@ -492,9 +523,9 @@
             this.lblCpuTemp.ForeColor = System.Drawing.Color.Black;
             this.lblCpuTemp.Location = new System.Drawing.Point(57, 118);
             this.lblCpuTemp.Name = "lblCpuTemp";
-            this.lblCpuTemp.Size = new System.Drawing.Size(65, 37);
+            this.lblCpuTemp.Size = new System.Drawing.Size(33, 37);
             this.lblCpuTemp.TabIndex = 19;
-            this.lblCpuTemp.Text = "100";
+            this.lblCpuTemp.Text = "0";
             // 
             // lblCPULoad
             // 
@@ -504,9 +535,9 @@
             this.lblCPULoad.ForeColor = System.Drawing.Color.Black;
             this.lblCPULoad.Location = new System.Drawing.Point(223, 110);
             this.lblCPULoad.Name = "lblCPULoad";
-            this.lblCPULoad.Size = new System.Drawing.Size(65, 37);
+            this.lblCPULoad.Size = new System.Drawing.Size(33, 37);
             this.lblCPULoad.TabIndex = 17;
-            this.lblCPULoad.Text = "100";
+            this.lblCPULoad.Text = "0";
             // 
             // bunifuGauge3
             // 
@@ -548,7 +579,7 @@
             this.psCPUTemp.ForeColor = System.Drawing.Color.SeaGreen;
             this.psCPUTemp.LabelVisible = false;
             this.psCPUTemp.LineProgressThickness = 9;
-            this.psCPUTemp.LineThickness = 15;
+            this.psCPUTemp.LineThickness = 10;
             this.psCPUTemp.Location = new System.Drawing.Point(16, 50);
             this.psCPUTemp.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.psCPUTemp.MaxValue = 100;
@@ -594,7 +625,7 @@
             this.psCPULoad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.psCPULoad.LabelVisible = false;
             this.psCPULoad.LineProgressThickness = 9;
-            this.psCPULoad.LineThickness = 15;
+            this.psCPULoad.LineThickness = 10;
             this.psCPULoad.Location = new System.Drawing.Point(182, 50);
             this.psCPULoad.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.psCPULoad.MaxValue = 100;
@@ -712,7 +743,7 @@
             this.psRamLoad.ForeColor = System.Drawing.Color.SeaGreen;
             this.psRamLoad.LabelVisible = false;
             this.psRamLoad.LineProgressThickness = 9;
-            this.psRamLoad.LineThickness = 15;
+            this.psRamLoad.LineThickness = 10;
             this.psRamLoad.Location = new System.Drawing.Point(28, 50);
             this.psRamLoad.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.psRamLoad.MaxValue = 100;
@@ -809,9 +840,9 @@
             this.lblGPULoad.ForeColor = System.Drawing.Color.Black;
             this.lblGPULoad.Location = new System.Drawing.Point(223, 116);
             this.lblGPULoad.Name = "lblGPULoad";
-            this.lblGPULoad.Size = new System.Drawing.Size(65, 37);
+            this.lblGPULoad.Size = new System.Drawing.Size(33, 37);
             this.lblGPULoad.TabIndex = 21;
-            this.lblGPULoad.Text = "100";
+            this.lblGPULoad.Text = "0";
             // 
             // bunifuCustomLabel25
             // 
@@ -833,9 +864,9 @@
             this.lblGPUTemp.ForeColor = System.Drawing.Color.Black;
             this.lblGPUTemp.Location = new System.Drawing.Point(59, 116);
             this.lblGPUTemp.Name = "lblGPUTemp";
-            this.lblGPUTemp.Size = new System.Drawing.Size(65, 37);
+            this.lblGPUTemp.Size = new System.Drawing.Size(33, 37);
             this.lblGPUTemp.TabIndex = 19;
-            this.lblGPUTemp.Text = "100";
+            this.lblGPUTemp.Text = "0";
             // 
             // lblGPUFan
             // 
@@ -929,7 +960,7 @@
             this.psGPUTemp.ForeColor = System.Drawing.Color.SeaGreen;
             this.psGPUTemp.LabelVisible = false;
             this.psGPUTemp.LineProgressThickness = 9;
-            this.psGPUTemp.LineThickness = 15;
+            this.psGPUTemp.LineThickness = 10;
             this.psGPUTemp.Location = new System.Drawing.Point(16, 50);
             this.psGPUTemp.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.psGPUTemp.MaxValue = 100;
@@ -975,7 +1006,7 @@
             this.psGPULoad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.psGPULoad.LabelVisible = false;
             this.psGPULoad.LineProgressThickness = 9;
-            this.psGPULoad.LineThickness = 15;
+            this.psGPULoad.LineThickness = 10;
             this.psGPULoad.Location = new System.Drawing.Point(182, 50);
             this.psGPULoad.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.psGPULoad.MaxValue = 100;
@@ -995,6 +1026,15 @@
             this.AppIcon.Text = "MCU";
             this.AppIcon.Visible = true;
             // 
+            // lblNet
+            // 
+            this.lblNet.AutoSize = true;
+            this.lblNet.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNet.Location = new System.Drawing.Point(195, 12);
+            this.lblNet.Name = "lblNet";
+            this.lblNet.Size = new System.Drawing.Size(0, 25);
+            this.lblNet.TabIndex = 10;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1007,6 +1047,8 @@
             this.Text = "Hardware Monitor";
             this.menuTab.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
+            this.bunifuCards5.ResumeLayout(false);
+            this.bunifuCards5.PerformLayout();
             this.bunifuCards4.ResumeLayout(false);
             this.bunifuCards4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReload)).EndInit();
@@ -1086,5 +1128,8 @@
         private System.Windows.Forms.ComboBox cbbCom;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.NotifyIcon AppIcon;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards5;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblNet;
     }
 }

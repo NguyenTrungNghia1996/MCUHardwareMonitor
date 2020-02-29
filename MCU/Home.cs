@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +20,11 @@ namespace MCU
     {
         readonly private Computer thisComputer = new Computer();
         public TcpClient client = new TcpClient();
-        
-
+        NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+        long byteRec, byteSent, oldRec, oldSent;
         public Home()
         {
             InitializeComponent();
-            timer.Interval = 1000;
-            timer.Start();
             this.thisComputer.CPUEnabled = true;
             this.thisComputer.GPUEnabled = true;
             this.thisComputer.HDDEnabled = true;
@@ -120,12 +119,15 @@ namespace MCU
                     }
                 }
             }
+            timer.Interval = 1000;
+            timer.Start();
         }
         public class Infomation
         {
             public Processor CPU { get; set; }
             public Ram RAM { get; set; }
             public Graphic GPU { get; set; }
+            public Net Net { get; set; }
         }
 
         public class Processor
@@ -149,12 +151,17 @@ namespace MCU
             public double Use { get; set; }
             public double Load { get; set; }
         }
+        public class Net
+        {
+            public string net { get; set; }
+        }
         private void timer_Tick(object sender, EventArgs e)
         {
             string cpuName = "", gpuName = "";
             float cpuLoad = 0, cpuTemp = 0;
             float gpuLoad = 0, gpuTemp = 0, gpuFan = 0, gpuFanLoad = 0;
-            float ramLoad = 0, ramUse = 0, totalRam = 0;
+            float ramLoad = 0, ramUse = 0, totalRam = 0, x, y;
+
             /*-------------------------------------Read Info-------------------------------------*/
             foreach (var hardware in thisComputer.Hardware)
             {
@@ -249,6 +256,31 @@ namespace MCU
                     }
                 }
             }
+            foreach (NetworkInterface inf in interfaces)
+            {
+                if (inf.OperationalStatus == OperationalStatus.Up &&
+                    inf.NetworkInterfaceType != NetworkInterfaceType.Loopback &&
+                    inf.NetworkInterfaceType != NetworkInterfaceType.Tunnel &&
+                    inf.NetworkInterfaceType != NetworkInterfaceType.Unknown && !inf.IsReceiveOnly)
+                {
+                    byteRec = inf.GetIPv4Statistics().BytesReceived;
+                    byteSent = inf.GetIPv4Statistics().BytesSent;
+                }
+            }
+            x = byteRec - oldRec;
+            y = byteSent - oldSent;
+            oldRec = byteRec;
+            oldSent = byteSent;
+            string strNw = (x * 8 / 1048576).ToString("F2") + "/" + (y * 8 / 1048576).ToString("F2");
+            if (strNw.Length > 10)
+            {
+                strNw = "Connecting...";
+            }
+            else
+            {
+                lblNet.Text = strNw + " Mbps";
+            }
+
             Processor dataCPU = new Processor
             {
                 Name = cpuName,
@@ -269,11 +301,16 @@ namespace MCU
                 Use = Math.Round(ramUse, 1),
                 Load = Math.Round(ramLoad, 1)
             };
+            Net dataNet = new Net
+            {
+                net = strNw,
+            };   
             Infomation info = new Infomation
             {
                 CPU = dataCPU,
                 GPU = dataGPU,
-                RAM = dataRam
+                RAM = dataRam,
+                Net = dataNet
             };
             string obj = JsonConvert.SerializeObject(info);
             /*---------------------------------Send DATA---------------------------------*/
