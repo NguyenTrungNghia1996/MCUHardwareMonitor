@@ -297,13 +297,13 @@ namespace MCU
             };
             Ram dataRam = new Ram
             {
-                Total = Math.Round(totalRam, 1),
+                Total = Math.Round(totalRam),
                 Use = Math.Round(ramUse, 1),
                 Load = Math.Round(ramLoad, 1)
             };
             Net dataNet = new Net
             {
-                net = strNw,
+                net = strNw
             };   
             Infomation info = new Infomation
             {
