@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using OpenHardwareMonitor.Hardware;
+using LibreHardwareMonitor.Hardware;
 
 namespace MCU
 {
@@ -25,11 +25,11 @@ namespace MCU
         public Home()
         {
             InitializeComponent();
-            this.thisComputer.CPUEnabled = true;
-            this.thisComputer.GPUEnabled = true;
-            this.thisComputer.HDDEnabled = true;
-            this.thisComputer.MainboardEnabled = true;
-            this.thisComputer.RAMEnabled = true;
+            this.thisComputer.IsCpuEnabled = true;
+            this.thisComputer.IsGpuEnabled = true;
+            this.thisComputer.IsStorageEnabled = true;
+            this.thisComputer.IsMotherboardEnabled = true;
+            this.thisComputer.IsMemoryEnabled = true;
             this.thisComputer.Open();
             /*AUTO*/
             if (ConfigurationManager.AppSettings["autoConnectWifi"].ToString().ToLower().Equals("true"))
@@ -167,7 +167,7 @@ namespace MCU
             {
                 hardware.Update();
                 /*---------------------------------CPU---------------------------------*/
-                if (hardware.HardwareType == HardwareType.CPU)
+                if (hardware.HardwareType == HardwareType.Cpu)
                 {
                     cpuName = hardware.Name;
                     lblCPUName.Text = cpuName;
@@ -190,7 +190,7 @@ namespace MCU
                 }
 
                 /*---------------------------------RAM---------------------------------*/
-                if (hardware.HardwareType == HardwareType.RAM)
+                if (hardware.HardwareType == HardwareType.Memory)
                 {
                     foreach (var sensor in hardware.Sensors)
                     {
@@ -201,13 +201,13 @@ namespace MCU
                             psRamLoad.Value = load;
                             lblRamLoad.Text = load.ToString();
                         }
-                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Used Memory")
+                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Memory Used")
                         {
                             ramUse = sensor.Value.GetValueOrDefault();
                             double ram = Math.Round(ramUse, 2);
                             lblRamUse.Text = ram.ToString();
                         }
-                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Available Memory")
+                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Memory Available")
                         {
                             float ramAva = sensor.Value.GetValueOrDefault();
                             totalRam = ramAva + ramUse;
@@ -219,7 +219,7 @@ namespace MCU
                 }
 
                 /*---------------------------------GPU---------------------------------*/
-                if (hardware.HardwareType == HardwareType.GpuAti || hardware.HardwareType == HardwareType.GpuNvidia)
+                if (hardware.HardwareType == HardwareType.GpuAmd || hardware.HardwareType == HardwareType.GpuNvidia)
                 {
                     gpuName = hardware.Name;
                     lblGPUName.Text = gpuName;
@@ -236,7 +236,9 @@ namespace MCU
                         if (sensor.SensorType == SensorType.Temperature)
                         {
                             gpuTemp = sensor.Value.GetValueOrDefault();
-                            int temp = (int)gpuTemp;
+                            string test = gpuTemp.ToString();
+                            string test2 = test.Substring(0, 2);
+                            int temp = int.Parse(test2);
                             psGPUTemp.Value = temp;
                             lblGPUTemp.Text = temp.ToString();
                         }
