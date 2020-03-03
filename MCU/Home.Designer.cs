@@ -1036,6 +1036,7 @@
             this.AppIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("AppIcon.Icon")));
             this.AppIcon.Text = "MCUHardwareMonitor";
             this.AppIcon.Visible = true;
+            this.AppIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AppIcon_DoubleClick);
             // 
             // Home
             // 
@@ -1047,6 +1048,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Home";
             this.Text = "Hardware Monitor";
+            this.Resize += new System.EventHandler(this.Home_Resize);
             this.menuTab.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
             this.bunifuCards5.ResumeLayout(false);

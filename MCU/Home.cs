@@ -25,6 +25,9 @@ namespace MCU
         public Home()
         {
             InitializeComponent();
+            base.WindowState = FormWindowState.Minimized;
+            base.ShowInTaskbar = false;
+            AddMenu();
             this.thisComputer.IsCpuEnabled = true;
             this.thisComputer.IsGpuEnabled = true;
             this.thisComputer.IsStorageEnabled = true;
@@ -124,6 +127,30 @@ namespace MCU
             timer.Interval = 1000;
             timer.Start();
         }
+        private void AddMenu()
+        {
+            this.AppIcon.ContextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.AppIcon.ContextMenuStrip.Items.Add("Connect", null, this.OpenConnectForm);
+            this.AppIcon.ContextMenuStrip.Items.Add("About", null, this.OpenAboutForm);
+            this.AppIcon.ContextMenuStrip.Items.Add("Exit", null, this.Exit);
+        }
+        private void OpenConnectForm(object sender, EventArgs e)
+        {
+            base.WindowState = FormWindowState.Normal;  // Mở cửa sổ Connect
+            base.ShowInTaskbar = true;
+            base.Visible = false;
+            base.Show();
+        }
+
+        private void OpenAboutForm(object sender, EventArgs e)      // Mở cửa sổ About
+        {
+            new About().Show();
+        }
+        private void Exit(object sender, EventArgs e)               // Thoát chương trình
+        {
+            Application.Exit();
+            AppIcon.Dispose();
+        }
         public class Infomation
         {
             public Processor CPU { get; set; }
@@ -175,14 +202,16 @@ namespace MCU
                     lblCPUName.Text = cpuName;
                     foreach (var sensor in hardware.Sensors)
                     {
-                        if (sensor.SensorType == SensorType.Load && sensor.Name == "CPU Total") {
+                        if (sensor.SensorType == SensorType.Load && sensor.Name == "CPU Total")
+                        {
                             cpuLoad = sensor.Value.Value;
                             int load = (int)cpuLoad;
                             psCPULoad.Value = load;
                             lblCPULoad.Text = load.ToString();
                         }
 
-                        if (sensor.SensorType == SensorType.Temperature && sensor.Name == "CPU Package") {
+                        if (sensor.SensorType == SensorType.Temperature && sensor.Name == "CPU Package")
+                        {
                             cpuTemp = sensor.Value.GetValueOrDefault();
                             int temp = (int)cpuTemp;
                             psCPUTemp.Value = temp;
@@ -238,11 +267,8 @@ namespace MCU
                         if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
                         {
                             gpuTemp = sensor.Value.GetValueOrDefault();
-                            string test = gpuTemp.ToString();
-                            string test2 = test.Substring(0, 2);
-                            int temp = int.Parse(test2);
-                            psGPUTemp.Value = temp;
-                            lblGPUTemp.Text = test.ToString();
+                            psGPUTemp.Value = (int)gpuTemp;
+                            lblGPUTemp.Text = gpuTemp.ToString();
                         }
                         if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
                         {
@@ -308,7 +334,7 @@ namespace MCU
             Net dataNet = new Net
             {
                 net = strNw
-            };   
+            };
             Infomation info = new Infomation
             {
                 CPU = dataCPU,
@@ -400,6 +426,31 @@ namespace MCU
             cbbCom.DataSource = SerialPort.GetPortNames();
         }
 
+        private void AppIcon_DoubleClick(object sender, EventArgs e)
+        {
+            base.WindowState = FormWindowState.Normal;  // Mở cửa sổ Connect
+            base.ShowInTaskbar = true;
+            base.Visible = false;
+            base.Show();
+        }
+
+        private void Home_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Normal)
+            {
+                this.Hide();
+                AppIcon.ShowBalloonTip(500, "Đang Chạy Thu Nhỏ !", "Minimize to tray!", ToolTipIcon.Info);
+            }
+            else
+            {
+                //this.Visible = true;
+                this.Show();
+                this.WindowState = FormWindowState.Normal;
+                this.Activate();
+                this.Focus();
+                this.ShowInTaskbar = true;
+            }
+        }
         private void btnWired_Click(object sender, EventArgs e)
         {
             try
@@ -409,7 +460,7 @@ namespace MCU
                 {
                     serialPort1.PortName = cbbCom.Text;
                     Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-                    _config.AppSettings.Settings["port"].Value =cbbCom.Text;
+                    _config.AppSettings.Settings["port"].Value = cbbCom.Text;
                     _config.Save();
                     serialPort1.Open();
                     btnWired.Text = "Disconnect";
