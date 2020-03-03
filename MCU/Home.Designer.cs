@@ -33,6 +33,7 @@
             this.menuTab = new MetroFramework.Controls.MetroTabControl();
             this.tabMonitor = new MetroFramework.Controls.MetroTabPage();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
+            this.lblNet = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards4 = new Bunifu.Framework.UI.BunifuCards();
             this.cbbCom = new System.Windows.Forms.ComboBox();
@@ -94,7 +95,6 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.AppIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.lblNet = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.menuTab.SuspendLayout();
             this.tabMonitor.SuspendLayout();
             this.bunifuCards5.SuspendLayout();
@@ -153,6 +153,15 @@
             this.bunifuCards5.ShadowDepth = 20;
             this.bunifuCards5.Size = new System.Drawing.Size(594, 47);
             this.bunifuCards5.TabIndex = 11;
+            // 
+            // lblNet
+            // 
+            this.lblNet.AutoSize = true;
+            this.lblNet.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNet.Location = new System.Drawing.Point(195, 12);
+            this.lblNet.Name = "lblNet";
+            this.lblNet.Size = new System.Drawing.Size(0, 25);
+            this.lblNet.TabIndex = 10;
             // 
             // bunifuCustomLabel16
             // 
@@ -1023,17 +1032,10 @@
             // 
             // AppIcon
             // 
-            this.AppIcon.Text = "MCU";
+            this.AppIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.AppIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("AppIcon.Icon")));
+            this.AppIcon.Text = "MCUHardwareMonitor";
             this.AppIcon.Visible = true;
-            // 
-            // lblNet
-            // 
-            this.lblNet.AutoSize = true;
-            this.lblNet.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNet.Location = new System.Drawing.Point(195, 12);
-            this.lblNet.Name = "lblNet";
-            this.lblNet.Size = new System.Drawing.Size(0, 25);
-            this.lblNet.TabIndex = 10;
             // 
             // Home
             // 

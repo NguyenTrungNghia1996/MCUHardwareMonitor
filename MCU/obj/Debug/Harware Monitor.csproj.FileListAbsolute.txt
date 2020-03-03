@@ -20,7 +20,6 @@ D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MCU.pdb
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Design.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Fonts.dll
-D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\OpenHardwareMonitorLib.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\XanderUI.dll
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csprojAssemblyReference.cache
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.Home.resources
@@ -50,3 +49,5 @@ C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.G
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\LibreHardwareMonitorLib.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\HidLibrary.dll

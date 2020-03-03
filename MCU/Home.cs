@@ -75,6 +75,7 @@ namespace MCU
                             btnWired.ForeColor = Color.Red;
                             lblStatusWired.Text = "Connected";
                             lblStatusWired.ForeColor = Color.Green;
+                            AppIcon.ShowBalloonTip(5000, "Kết nối thành công ", "Connection Successful", ToolTipIcon.Info);
                         }
                     }
                     catch
@@ -108,6 +109,7 @@ namespace MCU
                         //btnConnectWIFI.BackColor = Color.Red;
                         lblStatusWifi.Text = "Connected";
                         lblStatusWifi.ForeColor = Color.Green;
+                        AppIcon.ShowBalloonTip(5000, "Kết nối thành công ", "Connection Successful", ToolTipIcon.Info);
                     }
                     else
                     {
@@ -233,14 +235,14 @@ namespace MCU
                             lblGPULoad.Text = load.ToString();
                         }
 
-                        if (sensor.SensorType == SensorType.Temperature)
+                        if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
                         {
                             gpuTemp = sensor.Value.GetValueOrDefault();
                             string test = gpuTemp.ToString();
                             string test2 = test.Substring(0, 2);
                             int temp = int.Parse(test2);
                             psGPUTemp.Value = temp;
-                            lblGPUTemp.Text = temp.ToString();
+                            lblGPUTemp.Text = test.ToString();
                         }
                         if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
                         {
@@ -367,6 +369,7 @@ namespace MCU
                     btnConnectWIFI.ForeColor = Color.Red;
                     lblStatusWifi.Text = "Connected";
                     lblStatusWifi.ForeColor = Color.Green;
+                    AppIcon.ShowBalloonTip(5000, "Kết nối thành công ", "Connection Successful", ToolTipIcon.Info);
                     Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     _config.AppSettings.Settings["ip"].Value = txtIP.Text;
                     _config.Save();
@@ -413,6 +416,7 @@ namespace MCU
                     btnWired.ForeColor = Color.Red;
                     lblStatusWired.Text = "Connected";
                     lblStatusWired.ForeColor = Color.Green;
+                    AppIcon.ShowBalloonTip(5000, "Kết nối thành công ", "Connection Successful", ToolTipIcon.Info);
                 }
                 else
                 {
@@ -421,6 +425,7 @@ namespace MCU
                     btnWired.ForeColor = Color.Green;
                     lblStatusWired.Text = "Disconnect";
                     lblStatusWired.ForeColor = Color.Red;
+                    AppIcon.ShowBalloonTip(5000, "Đã ngắt kết nối ", "Disconnected", ToolTipIcon.Warning);
                 }
             }
             catch
