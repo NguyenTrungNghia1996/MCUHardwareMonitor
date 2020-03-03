@@ -116,7 +116,7 @@
             this.menuTab.Margin = new System.Windows.Forms.Padding(5);
             this.menuTab.Name = "menuTab";
             this.menuTab.SelectedIndex = 0;
-            this.menuTab.Size = new System.Drawing.Size(608, 868);
+            this.menuTab.Size = new System.Drawing.Size(602, 880);
             this.menuTab.TabIndex = 0;
             this.menuTab.UseSelectable = true;
             // 
@@ -133,7 +133,7 @@
             this.tabMonitor.HorizontalScrollbarSize = 10;
             this.tabMonitor.Location = new System.Drawing.Point(4, 38);
             this.tabMonitor.Name = "tabMonitor";
-            this.tabMonitor.Size = new System.Drawing.Size(600, 826);
+            this.tabMonitor.Size = new System.Drawing.Size(594, 838);
             this.tabMonitor.TabIndex = 0;
             this.tabMonitor.Text = "Monitor";
             this.tabMonitor.VerticalScrollbarBarColor = true;
@@ -1069,11 +1069,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(648, 948);
+            this.ClientSize = new System.Drawing.Size(642, 960);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.menuTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(642, 961);
+            this.MinimumSize = new System.Drawing.Size(641, 960);
             this.Name = "Home";
             this.Text = "Hardware Monitor";
             this.Resize += new System.EventHandler(this.Home_Resize);

@@ -27,12 +27,14 @@ namespace MCU
             InitializeComponent();
             timer.Interval = 1000;
             timer.Start();
+            
             AddMenu();
             this.thisComputer.IsCpuEnabled = true;
             this.thisComputer.IsGpuEnabled = true;
             this.thisComputer.IsStorageEnabled = true;
             this.thisComputer.IsMotherboardEnabled = true;
             this.thisComputer.IsMemoryEnabled = true;
+            this.thisComputer.IsNetworkEnabled = true;
             this.thisComputer.Open();
             /*AUTO*/
             if (ConfigurationManager.AppSettings["autoConnectWifi"].ToString().ToLower().Equals("true"))
@@ -289,9 +291,9 @@ namespace MCU
                         }
                         if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
                         {
-                            gpuFan = sensor.Value.GetValueOrDefault();
-                            int fan = (int)gpuFan;
-                            lblGPUFan.Text = fan.ToString();
+                            //gpuFan = sensor.Value.GetValueOrDefault();
+                           // int fan = (int)gpuFan;
+                            //lblGPUFan.Text = fan.ToString();
                         }
                         if (sensor.SensorType == SensorType.Control && sensor.Name == "GPU Fan")
                         {
@@ -318,14 +320,14 @@ namespace MCU
             y = byteSent - oldSent;
             oldRec = byteRec;
             oldSent = byteSent;
-            string strNw = (x * 8 / 1048576).ToString("F2") + "/" + (y * 8 / 1048576).ToString("F2");
+            string strNw = (x / 1048576).ToString("F2") + "/" + (y / 1048576).ToString("F2");
             if (strNw.Length > 10)
             {
                 strNw = "Connecting...";
             }
             else
             {
-                lblNet.Text = strNw + " Mbps";
+                lblNet.Text = strNw + " Mb/s";
             }
 
             Processor dataCPU = new Processor
@@ -511,6 +513,14 @@ namespace MCU
             Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             _config.AppSettings.Settings["state"].Value = checkBox2.Checked.ToString();
             _config.Save();
+            if (checkBox2.Checked)
+            {
+                AppIcon.ShowBalloonTip(500, "Sẽ chạy thu nhỏ ", "Will run minimized", ToolTipIcon.Info);
+            }
+            else
+            {
+                AppIcon.ShowBalloonTip(500, "Sẽ không chạy thu nhỏ ", "Will not run minimized", ToolTipIcon.Info);
+            }
         }
 
         private void swWifiAuto_Click(object sender, EventArgs e)
@@ -528,11 +538,17 @@ namespace MCU
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
             Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             _config.AppSettings.Settings["startTray"].Value = checkBox1.Checked.ToString();
             _config.Save();
-
+            if (checkBox1.Checked)
+            {
+                AppIcon.ShowBalloonTip(500, "Sẽ chạy cùng Windows ", "Will run with Windows", ToolTipIcon.Info);
+            }
+            else
+            {
+                AppIcon.ShowBalloonTip(500, "Sẽ không chạy cùng Windows", "Will not run with Windows", ToolTipIcon.Info);
+            }
         }
     }
 }

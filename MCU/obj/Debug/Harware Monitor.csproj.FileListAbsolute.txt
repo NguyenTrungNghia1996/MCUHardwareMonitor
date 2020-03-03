@@ -52,3 +52,4 @@ C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\LibreHardwareMonitorLib.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\HidLibrary.dll
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.About.resources
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\Microsoft.Win32.TaskScheduler.dll
