@@ -291,9 +291,8 @@ namespace MCU
                         }
                         if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
                         {
-                            //gpuFan = sensor.Value.GetValueOrDefault();
-                           // int fan = (int)gpuFan;
-                            //lblGPUFan.Text = fan.ToString();
+                            gpuFan = sensor.Value.GetValueOrDefault();
+                            lblGPUFan.Text = ((int)gpuFan).ToString();
                         }
                         if (sensor.SensorType == SensorType.Control && sensor.Name == "GPU Fan")
                         {
