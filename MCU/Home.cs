@@ -25,8 +25,8 @@ namespace MCU
         public Home()
         {
             InitializeComponent();
-            base.WindowState = FormWindowState.Minimized;
-            base.ShowInTaskbar = false;
+            timer.Interval = 1000;
+            timer.Start();
             AddMenu();
             this.thisComputer.IsCpuEnabled = true;
             this.thisComputer.IsGpuEnabled = true;
@@ -50,6 +50,22 @@ namespace MCU
             else
             {
                 swWiredAuto.Value = false;
+            }
+            if (ConfigurationManager.AppSettings["startTray"].ToString().ToLower().Equals("true"))
+            {
+               checkBox1.Checked = true;
+            }
+            if (ConfigurationManager.AppSettings["state"].ToString().ToLower().Equals("true"))
+            {
+                base.WindowState = FormWindowState.Minimized;
+                base.ShowInTaskbar = false;
+                checkBox2.Checked = true;
+            }
+            else
+            {
+                base.WindowState = FormWindowState.Normal;
+                base.ShowInTaskbar = true;
+                checkBox2.Checked = false;
             }
             /*WIRED*/
             serialPort1.BaudRate = 9600;
@@ -124,8 +140,9 @@ namespace MCU
                     }
                 }
             }
-            timer.Interval = 1000;
-            timer.Start();
+
+
+
         }
         private void AddMenu()
         {
@@ -451,6 +468,9 @@ namespace MCU
                 this.ShowInTaskbar = true;
             }
         }
+
+       
+
         private void btnWired_Click(object sender, EventArgs e)
         {
             try
@@ -486,6 +506,13 @@ namespace MCU
 
         }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            _config.AppSettings.Settings["state"].Value = checkBox2.Checked.ToString();
+            _config.Save();
+        }
+
         private void swWifiAuto_Click(object sender, EventArgs e)
         {
             Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
@@ -498,6 +525,14 @@ namespace MCU
             Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             _config.AppSettings.Settings["autoConnectWired"].Value = swWiredAuto.Value.ToString();
             _config.Save();
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            _config.AppSettings.Settings["startTray"].Value = checkBox1.Checked.ToString();
+            _config.Save();
+
         }
     }
 }
