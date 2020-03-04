@@ -244,7 +244,7 @@ namespace MCU
                 {
                     foreach (var sensor in hardware.Sensors)
                     {
-                        if (sensor.SensorType == SensorType.Load)
+                        if (sensor.SensorType == SensorType.Load && sensor.Name == "Memory")
                         {
                             ramLoad = sensor.Value.Value;
                             int load = (int)ramLoad;
