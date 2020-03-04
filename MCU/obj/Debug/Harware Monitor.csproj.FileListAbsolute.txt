@@ -33,3 +33,23 @@ C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.G
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
 C:\Users\nghia\Desktop\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MCU.exe.config
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MCU.exe
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MCU.pdb
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\LibreHardwareMonitorLib.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Design.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Fonts.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\Microsoft.Win32.TaskScheduler.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\Newtonsoft.Json.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\XanderUI.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\HidLibrary.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\Newtonsoft.Json.xml
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csprojAssemblyReference.cache
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.About.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.Home.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.Properties.Resources.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.GenerateResource.cache
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
+D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
