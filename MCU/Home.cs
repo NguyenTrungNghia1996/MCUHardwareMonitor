@@ -21,7 +21,6 @@ namespace MCU
         readonly private Computer thisComputer = new Computer();
         public TcpClient client = new TcpClient();
         NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
-        long byteRec, byteSent, oldRec, oldSent;
         public Home()
         {
             InitializeComponent();
@@ -205,10 +204,12 @@ namespace MCU
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            string cpuName = "", gpuName = "";
+            string cpuName = "", gpuName = "", strNw="";
             float cpuLoad = 0, cpuTemp = 0;
             float gpuLoad = 0, gpuTemp = 0, gpuFan = 0, gpuFanLoad = 0;
-            float ramLoad = 0, ramUse = 0, totalRam = 0, x, y;
+            float ramLoad = 0, ramUse = 0, totalRam = 0;
+            float vmLoad = 0, vmUse = 0, vmTotal = 0;
+            float upload = 0, download = 0;
 
             /*-------------------------------------Read Info-------------------------------------*/
             foreach (var hardware in thisComputer.Hardware)
@@ -224,17 +225,15 @@ namespace MCU
                         if (sensor.SensorType == SensorType.Load && sensor.Name == "CPU Total")
                         {
                             cpuLoad = sensor.Value.Value;
-                            int load = (int)cpuLoad;
-                            psCPULoad.Value = load;
-                            lblCPULoad.Text = load.ToString();
+                            psCPULoad.Value = (int)Math.Round(cpuLoad);
+                            lblCPULoad.Text = Math.Round(cpuLoad).ToString();
                         }
 
                         if (sensor.SensorType == SensorType.Temperature && sensor.Name == "CPU Package")
                         {
                             cpuTemp = sensor.Value.GetValueOrDefault();
-                            int temp = (int)cpuTemp;
-                            psCPUTemp.Value = temp;
-                            lblCpuTemp.Text = temp.ToString();
+                            psCPUTemp.Value = (int)Math.Round(cpuTemp);
+                            lblCpuTemp.Text = Math.Round(cpuTemp).ToString();
                         }
                     }
                 }
@@ -247,24 +246,39 @@ namespace MCU
                         if (sensor.SensorType == SensorType.Load && sensor.Name == "Memory")
                         {
                             ramLoad = sensor.Value.Value;
-                            int load = (int)ramLoad;
-                            psRamLoad.Value = load;
-                            lblRamLoad.Text = load.ToString();
+                            psRamLoad.Value = (int)Math.Round(ramLoad);
+                            lblRamLoad.Text = Math.Round(ramLoad).ToString();
                         }
                         if (sensor.SensorType == SensorType.Data && sensor.Name == "Memory Used")
                         {
                             ramUse = sensor.Value.GetValueOrDefault();
-                            double ram = Math.Round(ramUse, 2);
-                            lblRamUse.Text = ram.ToString();
+                            lblRamUse.Text = Math.Round(ramUse, 2).ToString();
                         }
                         if (sensor.SensorType == SensorType.Data && sensor.Name == "Memory Available")
                         {
                             float ramAva = sensor.Value.GetValueOrDefault();
+                            lblRamFree.Text = Math.Round(ramAva, 2).ToString();
                             totalRam = ramAva + ramUse;
-                            double ram = Math.Round(totalRam);
-                            lblRamTotal.Text = ram.ToString() + " GB";
+                            lblRamTotal.Text = Math.Round(totalRam).ToString() + " GB";
                         }
-
+                        if (sensor.SensorType == SensorType.Load && sensor.Name == "Virtual Memory")
+                        {
+                            vmLoad = sensor.Value.Value;
+                            psVm.Value = (int)Math.Round(vmLoad);
+                            lblVmLoad.Text = Math.Round(vmLoad).ToString();
+                        }
+                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Virtual Memory Used")
+                        {
+                            vmUse = sensor.Value.GetValueOrDefault();
+                            lblVmUsed.Text = Math.Round(vmUse, 2).ToString();
+                        }
+                        if (sensor.SensorType == SensorType.Data && sensor.Name == "Virtual Memory Available")
+                        {
+                            var vm = sensor.Value.GetValueOrDefault();
+                            lblVmFree.Text = Math.Round(vm, 2).ToString();
+                            vmTotal = vm + vmUse;
+                            lblVmTotal.Text = Math.Round(vmTotal).ToString() + " GB";
+                        }
                     }
                 }
 
@@ -278,57 +292,55 @@ namespace MCU
                         if (sensor.SensorType == SensorType.Load && sensor.Name == "GPU Core")
                         {
                             gpuLoad = sensor.Value.Value;
-                            int load = (int)gpuLoad;
-                            psGPULoad.Value = load;
-                            lblGPULoad.Text = load.ToString();
+                            psGPULoad.Value = (int)Math.Round(gpuLoad);
+                            lblGPULoad.Text = Math.Round(gpuLoad).ToString();
                         }
 
                         if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
                         {
                             gpuTemp = sensor.Value.GetValueOrDefault();
-                            psGPUTemp.Value = (int)gpuTemp;
+                            psGPUTemp.Value = (int)Math.Round(gpuTemp);
                             lblGPUTemp.Text = gpuTemp.ToString();
                         }
                         if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
                         {
                             gpuFan = sensor.Value.GetValueOrDefault();
-                            lblGPUFan.Text = ((int)gpuFan).ToString();
+                            lblGPUFan.Text = Math.Round(gpuFan).ToString();
                         }
                         if (sensor.SensorType == SensorType.Control && sensor.Name == "GPU Fan")
                         {
                             gpuFanLoad = sensor.Value.GetValueOrDefault();
-                            int fanLoad = (int)gpuFanLoad;
-                            psGPUFanLoad.Value = fanLoad;
+                            psGPUFanLoad.Value = (int)Math.Round(gpuFanLoad);
                         }
 
                     }
-                }
-            }
-            foreach (NetworkInterface inf in interfaces)
-            {
-                if (inf.OperationalStatus == OperationalStatus.Up &&
-                    inf.NetworkInterfaceType != NetworkInterfaceType.Loopback &&
-                    inf.NetworkInterfaceType != NetworkInterfaceType.Tunnel &&
-                    inf.NetworkInterfaceType != NetworkInterfaceType.Unknown && !inf.IsReceiveOnly)
-                {
-                    byteRec = inf.GetIPv4Statistics().BytesReceived;
-                    byteSent = inf.GetIPv4Statistics().BytesSent;
-                }
-            }
-            x = byteRec - oldRec;
-            y = byteSent - oldSent;
-            oldRec = byteRec;
-            oldSent = byteSent;
-            string strNw = (x / 1048576).ToString("F2") + "/" + (y / 1048576).ToString("F2");
-            if (strNw.Length > 10)
-            {
-                strNw = "Connecting...";
-            }
-            else
-            {
-                lblNet.Text = strNw + " Mb/s";
-            }
 
+                }
+                if(hardware.HardwareType == HardwareType.Network)
+                {
+                    foreach(var sensor in hardware.Sensors)
+                    {   
+                        if (sensor.SensorType == SensorType.Throughput && sensor.Name == "Upload Speed")
+                        {
+                           upload = (sensor.Value.GetValueOrDefault())*8/ 1048576;
+                        }
+                        if (sensor.SensorType == SensorType.Throughput && sensor.Name == "Download Speed")
+                        {
+                            download = (sensor.Value.GetValueOrDefault()) *8/ 1048576;
+                        }
+                        strNw = Math.Round(download,2).ToString("F2")+"/"+ Math.Round(upload, 2).ToString("F2");
+                        if (strNw.Length > 10)
+                        {
+                            strNw = "Connecting...";
+                        }
+                        else
+                        {
+                            lblNet.Text = strNw + " Mbps";
+                        }
+                    }
+                }
+               
+            }
             Processor dataCPU = new Processor
             {
                 Name = cpuName,
@@ -446,7 +458,7 @@ namespace MCU
 
         private void AppIcon_DoubleClick(object sender, EventArgs e)
         {
-            base.WindowState = FormWindowState.Normal;  // Mở cửa sổ Connect
+            base.WindowState = FormWindowState.Normal; 
             base.ShowInTaskbar = true;
             base.Visible = false;
             base.Show();

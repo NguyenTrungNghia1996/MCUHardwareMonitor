@@ -1,0 +1,20 @@
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MCU.exe.config
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MCU.exe
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MCU.pdb
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Bunifu_UI_v1.52.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\LibreHardwareMonitorLib.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.Design.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.Fonts.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Microsoft.Win32.TaskScheduler.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\XanderUI.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\HidLibrary.dll
+D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.xml
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.About.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.Home.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.Properties.Resources.resources
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.GenerateResource.cache
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.CopyComplete
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.exe
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.pdb

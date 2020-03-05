@@ -32,24 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuTab = new MetroFramework.Controls.MetroTabControl();
             this.tabMonitor = new MetroFramework.Controls.MetroTabPage();
-            this.bunifuCards11 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuCustomLabel33 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel34 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCards10 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.bunifuCustomLabel31 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel32 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCards9 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuProgressBar1 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.bunifuCustomLabel29 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel30 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCards12 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuCustomLabel38 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel39 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblVmFree = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel41 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.psVm = new Bunifu.Framework.UI.BunifuProgressBar();
+            this.lblVmTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel43 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblVmLoad = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel45 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblVmUsed = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuGauge1 = new Bunifu.Framework.UI.BunifuGauge();
+            this.bunifuCustomLabel47 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.bunifuCards7 = new Bunifu.Framework.UI.BunifuCards();
-            this.bunifuCustomLabel24 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel26 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
             this.lblNet = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -85,13 +84,16 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.psCPULoad = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuCustomLabel35 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel36 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblRamFree = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.psRamLoad = new Bunifu.Framework.UI.BunifuProgressBar();
             this.lblRamTotal = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRamLoad = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblRamUse = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.psRamLoad = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuGauge9 = new Bunifu.Framework.UI.BunifuGauge();
             this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
@@ -113,14 +115,10 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.AppIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.bunifuProgressBar3 = new Bunifu.Framework.UI.BunifuProgressBar();
             this.menuTab.SuspendLayout();
             this.tabMonitor.SuspendLayout();
-            this.bunifuCards11.SuspendLayout();
-            this.bunifuCards10.SuspendLayout();
-            this.bunifuCards9.SuspendLayout();
+            this.bunifuCards12.SuspendLayout();
             this.bunifuCards8.SuspendLayout();
-            this.bunifuCards7.SuspendLayout();
             this.bunifuCards5.SuspendLayout();
             this.bunifuCards4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReload)).BeginInit();
@@ -138,17 +136,14 @@
             this.menuTab.Margin = new System.Windows.Forms.Padding(5);
             this.menuTab.Name = "menuTab";
             this.menuTab.SelectedIndex = 0;
-            this.menuTab.Size = new System.Drawing.Size(1446, 609);
+            this.menuTab.Size = new System.Drawing.Size(1446, 500);
             this.menuTab.TabIndex = 0;
             this.menuTab.UseSelectable = true;
             // 
             // tabMonitor
             // 
-            this.tabMonitor.Controls.Add(this.bunifuCards11);
-            this.tabMonitor.Controls.Add(this.bunifuCards10);
-            this.tabMonitor.Controls.Add(this.bunifuCards9);
+            this.tabMonitor.Controls.Add(this.bunifuCards12);
             this.tabMonitor.Controls.Add(this.bunifuCards8);
-            this.tabMonitor.Controls.Add(this.bunifuCards7);
             this.tabMonitor.Controls.Add(this.bunifuCards5);
             this.tabMonitor.Controls.Add(this.bunifuCards4);
             this.tabMonitor.Controls.Add(this.bunifuCards6);
@@ -160,147 +155,185 @@
             this.tabMonitor.HorizontalScrollbarSize = 10;
             this.tabMonitor.Location = new System.Drawing.Point(4, 38);
             this.tabMonitor.Name = "tabMonitor";
-            this.tabMonitor.Size = new System.Drawing.Size(1438, 567);
+            this.tabMonitor.Size = new System.Drawing.Size(1438, 458);
             this.tabMonitor.TabIndex = 0;
             this.tabMonitor.Text = "Monitor";
             this.tabMonitor.VerticalScrollbarBarColor = true;
             this.tabMonitor.VerticalScrollbarHighlightOnWheel = false;
             this.tabMonitor.VerticalScrollbarSize = 10;
             // 
-            // bunifuCards11
+            // bunifuCards12
             // 
-            this.bunifuCards11.BackColor = System.Drawing.Color.White;
-            this.bunifuCards11.BorderRadius = 7;
-            this.bunifuCards11.BottomSahddow = true;
-            this.bunifuCards11.color = System.Drawing.SystemColors.Highlight;
-            this.bunifuCards11.Controls.Add(this.bunifuProgressBar3);
-            this.bunifuCards11.Controls.Add(this.bunifuCustomLabel33);
-            this.bunifuCards11.Controls.Add(this.bunifuCustomLabel34);
-            this.bunifuCards11.LeftSahddow = true;
-            this.bunifuCards11.Location = new System.Drawing.Point(1203, 242);
-            this.bunifuCards11.Name = "bunifuCards11";
-            this.bunifuCards11.RightSahddow = true;
-            this.bunifuCards11.ShadowDepth = 20;
-            this.bunifuCards11.Size = new System.Drawing.Size(233, 153);
-            this.bunifuCards11.TabIndex = 16;
+            this.bunifuCards12.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCards12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuCards12.BorderRadius = 7;
+            this.bunifuCards12.BottomSahddow = true;
+            this.bunifuCards12.color = System.Drawing.SystemColors.Highlight;
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel38);
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel39);
+            this.bunifuCards12.Controls.Add(this.lblVmFree);
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel41);
+            this.bunifuCards12.Controls.Add(this.psVm);
+            this.bunifuCards12.Controls.Add(this.lblVmTotal);
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel43);
+            this.bunifuCards12.Controls.Add(this.lblVmLoad);
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel45);
+            this.bunifuCards12.Controls.Add(this.lblVmUsed);
+            this.bunifuCards12.Controls.Add(this.bunifuGauge1);
+            this.bunifuCards12.Controls.Add(this.bunifuCustomLabel47);
+            this.bunifuCards12.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCards12.LeftSahddow = true;
+            this.bunifuCards12.Location = new System.Drawing.Point(961, 130);
+            this.bunifuCards12.Name = "bunifuCards12";
+            this.bunifuCards12.RightSahddow = true;
+            this.bunifuCards12.ShadowDepth = 50;
+            this.bunifuCards12.Size = new System.Drawing.Size(477, 106);
+            this.bunifuCards12.TabIndex = 32;
             // 
-            // bunifuCustomLabel33
+            // bunifuCustomLabel38
             // 
-            this.bunifuCustomLabel33.AutoSize = true;
-            this.bunifuCustomLabel33.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel33.Location = new System.Drawing.Point(13, 49);
-            this.bunifuCustomLabel33.Name = "bunifuCustomLabel33";
-            this.bunifuCustomLabel33.Size = new System.Drawing.Size(63, 25);
-            this.bunifuCustomLabel33.TabIndex = 10;
-            this.bunifuCustomLabel33.Text = "Used:";
+            this.bunifuCustomLabel38.AutoSize = true;
+            this.bunifuCustomLabel38.Font = new System.Drawing.Font("Segoe UI Historic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel38.Location = new System.Drawing.Point(309, 86);
+            this.bunifuCustomLabel38.Name = "bunifuCustomLabel38";
+            this.bunifuCustomLabel38.Size = new System.Drawing.Size(32, 13);
+            this.bunifuCustomLabel38.TabIndex = 31;
+            this.bunifuCustomLabel38.Text = "Free:";
             // 
-            // bunifuCustomLabel34
+            // bunifuCustomLabel39
             // 
-            this.bunifuCustomLabel34.AutoSize = true;
-            this.bunifuCustomLabel34.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel34.Location = new System.Drawing.Point(13, 12);
-            this.bunifuCustomLabel34.Name = "bunifuCustomLabel34";
-            this.bunifuCustomLabel34.Size = new System.Drawing.Size(157, 25);
-            this.bunifuCustomLabel34.TabIndex = 9;
-            this.bunifuCustomLabel34.Text = "Virtual Memory";
+            this.bunifuCustomLabel39.AutoSize = true;
+            this.bunifuCustomLabel39.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel39.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel39.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel39.Location = new System.Drawing.Point(372, 85);
+            this.bunifuCustomLabel39.Name = "bunifuCustomLabel39";
+            this.bunifuCustomLabel39.Size = new System.Drawing.Size(22, 13);
+            this.bunifuCustomLabel39.TabIndex = 30;
+            this.bunifuCustomLabel39.Text = "GB";
             // 
-            // bunifuCards10
+            // lblVmFree
             // 
-            this.bunifuCards10.BackColor = System.Drawing.Color.White;
-            this.bunifuCards10.BorderRadius = 7;
-            this.bunifuCards10.BottomSahddow = true;
-            this.bunifuCards10.color = System.Drawing.SystemColors.Highlight;
-            this.bunifuCards10.Controls.Add(this.bunifuProgressBar2);
-            this.bunifuCards10.Controls.Add(this.bunifuCustomLabel31);
-            this.bunifuCards10.Controls.Add(this.bunifuCustomLabel32);
-            this.bunifuCards10.LeftSahddow = true;
-            this.bunifuCards10.Location = new System.Drawing.Point(603, 242);
-            this.bunifuCards10.Name = "bunifuCards10";
-            this.bunifuCards10.RightSahddow = true;
-            this.bunifuCards10.ShadowDepth = 20;
-            this.bunifuCards10.Size = new System.Drawing.Size(594, 100);
-            this.bunifuCards10.TabIndex = 15;
+            this.lblVmFree.AutoSize = true;
+            this.lblVmFree.BackColor = System.Drawing.Color.Transparent;
+            this.lblVmFree.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVmFree.ForeColor = System.Drawing.Color.Gray;
+            this.lblVmFree.Location = new System.Drawing.Point(347, 84);
+            this.lblVmFree.Name = "lblVmFree";
+            this.lblVmFree.Size = new System.Drawing.Size(28, 15);
+            this.lblVmFree.TabIndex = 29;
+            this.lblVmFree.Text = "0.00";
             // 
-            // bunifuProgressBar2
+            // bunifuCustomLabel41
             // 
-            this.bunifuProgressBar2.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar2.BorderRadius = 5;
-            this.bunifuProgressBar2.Location = new System.Drawing.Point(76, 49);
-            this.bunifuProgressBar2.MaximumValue = 100;
-            this.bunifuProgressBar2.Name = "bunifuProgressBar2";
-            this.bunifuProgressBar2.ProgressColor = System.Drawing.Color.DarkCyan;
-            this.bunifuProgressBar2.Size = new System.Drawing.Size(369, 25);
-            this.bunifuProgressBar2.TabIndex = 11;
-            this.bunifuProgressBar2.Value = 50;
+            this.bunifuCustomLabel41.AutoSize = true;
+            this.bunifuCustomLabel41.Font = new System.Drawing.Font("Segoe UI Historic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel41.Location = new System.Drawing.Point(22, 82);
+            this.bunifuCustomLabel41.Name = "bunifuCustomLabel41";
+            this.bunifuCustomLabel41.Size = new System.Drawing.Size(36, 13);
+            this.bunifuCustomLabel41.TabIndex = 28;
+            this.bunifuCustomLabel41.Text = "Used:";
             // 
-            // bunifuCustomLabel31
+            // psVm
             // 
-            this.bunifuCustomLabel31.AutoSize = true;
-            this.bunifuCustomLabel31.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel31.Location = new System.Drawing.Point(13, 49);
-            this.bunifuCustomLabel31.Name = "bunifuCustomLabel31";
-            this.bunifuCustomLabel31.Size = new System.Drawing.Size(63, 25);
-            this.bunifuCustomLabel31.TabIndex = 10;
-            this.bunifuCustomLabel31.Text = "Used:";
+            this.psVm.BackColor = System.Drawing.Color.Silver;
+            this.psVm.BorderRadius = 5;
+            this.psVm.Location = new System.Drawing.Point(19, 50);
+            this.psVm.Margin = new System.Windows.Forms.Padding(7);
+            this.psVm.MaximumValue = 100;
+            this.psVm.Name = "psVm";
+            this.psVm.ProgressColor = System.Drawing.Color.DarkCyan;
+            this.psVm.Size = new System.Drawing.Size(371, 25);
+            this.psVm.TabIndex = 27;
+            this.psVm.Value = 50;
             // 
-            // bunifuCustomLabel32
+            // lblVmTotal
             // 
-            this.bunifuCustomLabel32.AutoSize = true;
-            this.bunifuCustomLabel32.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel32.Location = new System.Drawing.Point(13, 12);
-            this.bunifuCustomLabel32.Name = "bunifuCustomLabel32";
-            this.bunifuCustomLabel32.Size = new System.Drawing.Size(287, 25);
-            this.bunifuCustomLabel32.TabIndex = 9;
-            this.bunifuCustomLabel32.Text = "Samsung SSD EVO 960 250GB";
+            this.lblVmTotal.AutoSize = true;
+            this.lblVmTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblVmTotal.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVmTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblVmTotal.Location = new System.Drawing.Point(183, 14);
+            this.lblVmTotal.Name = "lblVmTotal";
+            this.lblVmTotal.Size = new System.Drawing.Size(41, 30);
+            this.lblVmTotal.TabIndex = 26;
+            this.lblVmTotal.Text = "GB";
             // 
-            // bunifuCards9
+            // bunifuCustomLabel43
             // 
-            this.bunifuCards9.BackColor = System.Drawing.Color.White;
-            this.bunifuCards9.BorderRadius = 7;
-            this.bunifuCards9.BottomSahddow = true;
-            this.bunifuCards9.color = System.Drawing.SystemColors.Highlight;
-            this.bunifuCards9.Controls.Add(this.bunifuProgressBar1);
-            this.bunifuCards9.Controls.Add(this.bunifuCustomLabel29);
-            this.bunifuCards9.Controls.Add(this.bunifuCustomLabel30);
-            this.bunifuCards9.LeftSahddow = true;
-            this.bunifuCards9.Location = new System.Drawing.Point(0, 242);
-            this.bunifuCards9.Name = "bunifuCards9";
-            this.bunifuCards9.RightSahddow = true;
-            this.bunifuCards9.ShadowDepth = 20;
-            this.bunifuCards9.Size = new System.Drawing.Size(594, 100);
-            this.bunifuCards9.TabIndex = 14;
+            this.bunifuCustomLabel43.AutoSize = true;
+            this.bunifuCustomLabel43.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel43.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel43.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel43.Location = new System.Drawing.Point(448, 53);
+            this.bunifuCustomLabel43.Name = "bunifuCustomLabel43";
+            this.bunifuCustomLabel43.Size = new System.Drawing.Size(22, 20);
+            this.bunifuCustomLabel43.TabIndex = 25;
+            this.bunifuCustomLabel43.Text = "%";
             // 
-            // bunifuProgressBar1
+            // lblVmLoad
             // 
-            this.bunifuProgressBar1.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar1.BorderRadius = 5;
-            this.bunifuProgressBar1.Location = new System.Drawing.Point(77, 49);
-            this.bunifuProgressBar1.MaximumValue = 100;
-            this.bunifuProgressBar1.Name = "bunifuProgressBar1";
-            this.bunifuProgressBar1.ProgressColor = System.Drawing.Color.DarkCyan;
-            this.bunifuProgressBar1.Size = new System.Drawing.Size(354, 25);
-            this.bunifuProgressBar1.TabIndex = 11;
-            this.bunifuProgressBar1.Value = 50;
+            this.lblVmLoad.AutoSize = true;
+            this.lblVmLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblVmLoad.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVmLoad.ForeColor = System.Drawing.Color.Black;
+            this.lblVmLoad.Location = new System.Drawing.Point(399, 45);
+            this.lblVmLoad.Name = "lblVmLoad";
+            this.lblVmLoad.Size = new System.Drawing.Size(49, 30);
+            this.lblVmLoad.TabIndex = 24;
+            this.lblVmLoad.Text = "100";
             // 
-            // bunifuCustomLabel29
+            // bunifuCustomLabel45
             // 
-            this.bunifuCustomLabel29.AutoSize = true;
-            this.bunifuCustomLabel29.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel29.Location = new System.Drawing.Point(13, 49);
-            this.bunifuCustomLabel29.Name = "bunifuCustomLabel29";
-            this.bunifuCustomLabel29.Size = new System.Drawing.Size(63, 25);
-            this.bunifuCustomLabel29.TabIndex = 10;
-            this.bunifuCustomLabel29.Text = "Used:";
+            this.bunifuCustomLabel45.AutoSize = true;
+            this.bunifuCustomLabel45.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel45.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel45.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel45.Location = new System.Drawing.Point(93, 83);
+            this.bunifuCustomLabel45.Name = "bunifuCustomLabel45";
+            this.bunifuCustomLabel45.Size = new System.Drawing.Size(22, 13);
+            this.bunifuCustomLabel45.TabIndex = 23;
+            this.bunifuCustomLabel45.Text = "GB";
             // 
-            // bunifuCustomLabel30
+            // lblVmUsed
             // 
-            this.bunifuCustomLabel30.AutoSize = true;
-            this.bunifuCustomLabel30.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel30.Location = new System.Drawing.Point(13, 12);
-            this.bunifuCustomLabel30.Name = "bunifuCustomLabel30";
-            this.bunifuCustomLabel30.Size = new System.Drawing.Size(287, 25);
-            this.bunifuCustomLabel30.TabIndex = 9;
-            this.bunifuCustomLabel30.Text = "Samsung SSD EVO 960 250GB";
+            this.lblVmUsed.AutoSize = true;
+            this.lblVmUsed.BackColor = System.Drawing.Color.Transparent;
+            this.lblVmUsed.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVmUsed.ForeColor = System.Drawing.Color.Gray;
+            this.lblVmUsed.Location = new System.Drawing.Point(59, 82);
+            this.lblVmUsed.Name = "lblVmUsed";
+            this.lblVmUsed.Size = new System.Drawing.Size(28, 15);
+            this.lblVmUsed.TabIndex = 22;
+            this.lblVmUsed.Text = "0.00";
+            // 
+            // bunifuGauge1
+            // 
+            this.bunifuGauge1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGauge1.BackgroundImage")));
+            this.bunifuGauge1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bunifuGauge1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bunifuGauge1.Location = new System.Drawing.Point(1098, 111);
+            this.bunifuGauge1.Margin = new System.Windows.Forms.Padding(18);
+            this.bunifuGauge1.Name = "bunifuGauge1";
+            this.bunifuGauge1.ProgressBgColor = System.Drawing.Color.Gray;
+            this.bunifuGauge1.ProgressColor1 = System.Drawing.Color.SeaGreen;
+            this.bunifuGauge1.ProgressColor2 = System.Drawing.Color.Tomato;
+            this.bunifuGauge1.Size = new System.Drawing.Size(630, 432);
+            this.bunifuGauge1.TabIndex = 6;
+            this.bunifuGauge1.Thickness = 10;
+            this.bunifuGauge1.Value = 20;
+            // 
+            // bunifuCustomLabel47
+            // 
+            this.bunifuCustomLabel47.AutoSize = true;
+            this.bunifuCustomLabel47.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel47.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel47.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel47.Location = new System.Drawing.Point(13, 12);
+            this.bunifuCustomLabel47.Name = "bunifuCustomLabel47";
+            this.bunifuCustomLabel47.Size = new System.Drawing.Size(176, 30);
+            this.bunifuCustomLabel47.TabIndex = 2;
+            this.bunifuCustomLabel47.Text = "Virtual Memory:";
             // 
             // bunifuCards8
             // 
@@ -312,11 +345,11 @@
             this.bunifuCards8.Controls.Add(this.checkBox2);
             this.bunifuCards8.Controls.Add(this.checkBox1);
             this.bunifuCards8.LeftSahddow = true;
-            this.bunifuCards8.Location = new System.Drawing.Point(1203, 401);
+            this.bunifuCards8.Location = new System.Drawing.Point(1200, 295);
             this.bunifuCards8.Name = "bunifuCards8";
             this.bunifuCards8.RightSahddow = true;
             this.bunifuCards8.ShadowDepth = 20;
-            this.bunifuCards8.Size = new System.Drawing.Size(233, 161);
+            this.bunifuCards8.Size = new System.Drawing.Size(237, 161);
             this.bunifuCards8.TabIndex = 13;
             // 
             // bunifuCustomLabel28
@@ -353,41 +386,6 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // bunifuCards7
-            // 
-            this.bunifuCards7.BackColor = System.Drawing.Color.White;
-            this.bunifuCards7.BorderRadius = 7;
-            this.bunifuCards7.BottomSahddow = true;
-            this.bunifuCards7.color = System.Drawing.SystemColors.Highlight;
-            this.bunifuCards7.Controls.Add(this.bunifuCustomLabel24);
-            this.bunifuCards7.Controls.Add(this.bunifuCustomLabel26);
-            this.bunifuCards7.LeftSahddow = true;
-            this.bunifuCards7.Location = new System.Drawing.Point(603, 348);
-            this.bunifuCards7.Name = "bunifuCards7";
-            this.bunifuCards7.RightSahddow = true;
-            this.bunifuCards7.ShadowDepth = 20;
-            this.bunifuCards7.Size = new System.Drawing.Size(594, 47);
-            this.bunifuCards7.TabIndex = 12;
-            // 
-            // bunifuCustomLabel24
-            // 
-            this.bunifuCustomLabel24.AutoSize = true;
-            this.bunifuCustomLabel24.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel24.Location = new System.Drawing.Point(195, 12);
-            this.bunifuCustomLabel24.Name = "bunifuCustomLabel24";
-            this.bunifuCustomLabel24.Size = new System.Drawing.Size(0, 25);
-            this.bunifuCustomLabel24.TabIndex = 10;
-            // 
-            // bunifuCustomLabel26
-            // 
-            this.bunifuCustomLabel26.AutoSize = true;
-            this.bunifuCustomLabel26.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel26.Location = new System.Drawing.Point(12, 12);
-            this.bunifuCustomLabel26.Name = "bunifuCustomLabel26";
-            this.bunifuCustomLabel26.Size = new System.Drawing.Size(55, 25);
-            this.bunifuCustomLabel26.TabIndex = 9;
-            this.bunifuCustomLabel26.Text = "FAN:";
-            // 
             // bunifuCards5
             // 
             this.bunifuCards5.BackColor = System.Drawing.Color.White;
@@ -397,28 +395,28 @@
             this.bunifuCards5.Controls.Add(this.lblNet);
             this.bunifuCards5.Controls.Add(this.bunifuCustomLabel16);
             this.bunifuCards5.LeftSahddow = true;
-            this.bunifuCards5.Location = new System.Drawing.Point(0, 348);
+            this.bunifuCards5.Location = new System.Drawing.Point(0, 242);
             this.bunifuCards5.Name = "bunifuCards5";
             this.bunifuCards5.RightSahddow = true;
             this.bunifuCards5.ShadowDepth = 20;
-            this.bunifuCards5.Size = new System.Drawing.Size(594, 47);
+            this.bunifuCards5.Size = new System.Drawing.Size(1437, 47);
             this.bunifuCards5.TabIndex = 11;
             // 
             // lblNet
             // 
             this.lblNet.AutoSize = true;
             this.lblNet.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNet.Location = new System.Drawing.Point(195, 12);
+            this.lblNet.Location = new System.Drawing.Point(177, 12);
             this.lblNet.Name = "lblNet";
             this.lblNet.Size = new System.Drawing.Size(149, 25);
             this.lblNet.TabIndex = 10;
-            this.lblNet.Text = "5.25/5.25 MB/s";
+            this.lblNet.Text = "0.00/0.00 MB/s";
             // 
             // bunifuCustomLabel16
             // 
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(13, 12);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(11, 12);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
             this.bunifuCustomLabel16.Size = new System.Drawing.Size(162, 25);
             this.bunifuCustomLabel16.TabIndex = 9;
@@ -440,7 +438,7 @@
             this.bunifuCards4.Controls.Add(this.bunifuCustomLabel13);
             this.bunifuCards4.Controls.Add(this.bunifuCustomLabel12);
             this.bunifuCards4.LeftSahddow = true;
-            this.bunifuCards4.Location = new System.Drawing.Point(603, 401);
+            this.bunifuCards4.Location = new System.Drawing.Point(600, 295);
             this.bunifuCards4.Name = "bunifuCards4";
             this.bunifuCards4.RightSahddow = true;
             this.bunifuCards4.ShadowDepth = 20;
@@ -588,7 +586,7 @@
             this.bunifuCards6.Controls.Add(this.bunifuCustomLabel20);
             this.bunifuCards6.Controls.Add(this.bunifuCustomLabel22);
             this.bunifuCards6.LeftSahddow = true;
-            this.bunifuCards6.Location = new System.Drawing.Point(0, 401);
+            this.bunifuCards6.Location = new System.Drawing.Point(0, 295);
             this.bunifuCards6.Name = "bunifuCards6";
             this.bunifuCards6.RightSahddow = true;
             this.bunifuCards6.ShadowDepth = 20;
@@ -739,7 +737,7 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 50;
-            this.bunifuCards1.Size = new System.Drawing.Size(594, 217);
+            this.bunifuCards1.Size = new System.Drawing.Size(354, 217);
             this.bunifuCards1.TabIndex = 7;
             // 
             // bunifuCustomLabel2
@@ -903,23 +901,83 @@
             this.bunifuCards3.BorderRadius = 7;
             this.bunifuCards3.BottomSahddow = true;
             this.bunifuCards3.color = System.Drawing.SystemColors.Highlight;
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel35);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel36);
+            this.bunifuCards3.Controls.Add(this.lblRamFree);
+            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel21);
+            this.bunifuCards3.Controls.Add(this.psRamLoad);
             this.bunifuCards3.Controls.Add(this.lblRamTotal);
             this.bunifuCards3.Controls.Add(this.bunifuCustomLabel7);
             this.bunifuCards3.Controls.Add(this.lblRamLoad);
             this.bunifuCards3.Controls.Add(this.bunifuCustomLabel1);
             this.bunifuCards3.Controls.Add(this.lblRamUse);
-            this.bunifuCards3.Controls.Add(this.bunifuCustomLabel21);
-            this.bunifuCards3.Controls.Add(this.psRamLoad);
             this.bunifuCards3.Controls.Add(this.bunifuGauge9);
             this.bunifuCards3.Controls.Add(this.bunifuCustomLabel15);
             this.bunifuCards3.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCards3.LeftSahddow = true;
-            this.bunifuCards3.Location = new System.Drawing.Point(1203, 19);
+            this.bunifuCards3.Location = new System.Drawing.Point(960, 19);
             this.bunifuCards3.Name = "bunifuCards3";
             this.bunifuCards3.RightSahddow = true;
             this.bunifuCards3.ShadowDepth = 50;
-            this.bunifuCards3.Size = new System.Drawing.Size(233, 217);
+            this.bunifuCards3.Size = new System.Drawing.Size(477, 110);
             this.bunifuCards3.TabIndex = 5;
+            // 
+            // bunifuCustomLabel35
+            // 
+            this.bunifuCustomLabel35.AutoSize = true;
+            this.bunifuCustomLabel35.Font = new System.Drawing.Font("Segoe UI Historic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel35.Location = new System.Drawing.Point(311, 87);
+            this.bunifuCustomLabel35.Name = "bunifuCustomLabel35";
+            this.bunifuCustomLabel35.Size = new System.Drawing.Size(32, 13);
+            this.bunifuCustomLabel35.TabIndex = 31;
+            this.bunifuCustomLabel35.Text = "Free:";
+            // 
+            // bunifuCustomLabel36
+            // 
+            this.bunifuCustomLabel36.AutoSize = true;
+            this.bunifuCustomLabel36.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel36.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel36.ForeColor = System.Drawing.Color.Gray;
+            this.bunifuCustomLabel36.Location = new System.Drawing.Point(373, 87);
+            this.bunifuCustomLabel36.Name = "bunifuCustomLabel36";
+            this.bunifuCustomLabel36.Size = new System.Drawing.Size(22, 13);
+            this.bunifuCustomLabel36.TabIndex = 30;
+            this.bunifuCustomLabel36.Text = "GB";
+            // 
+            // lblRamFree
+            // 
+            this.lblRamFree.AutoSize = true;
+            this.lblRamFree.BackColor = System.Drawing.Color.Transparent;
+            this.lblRamFree.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRamFree.ForeColor = System.Drawing.Color.Gray;
+            this.lblRamFree.Location = new System.Drawing.Point(349, 86);
+            this.lblRamFree.Name = "lblRamFree";
+            this.lblRamFree.Size = new System.Drawing.Size(28, 15);
+            this.lblRamFree.TabIndex = 29;
+            this.lblRamFree.Text = "0.00";
+            // 
+            // bunifuCustomLabel21
+            // 
+            this.bunifuCustomLabel21.AutoSize = true;
+            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Segoe UI Historic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(23, 84);
+            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
+            this.bunifuCustomLabel21.Size = new System.Drawing.Size(36, 13);
+            this.bunifuCustomLabel21.TabIndex = 28;
+            this.bunifuCustomLabel21.Text = "Used:";
+            // 
+            // psRamLoad
+            // 
+            this.psRamLoad.BackColor = System.Drawing.Color.Silver;
+            this.psRamLoad.BorderRadius = 5;
+            this.psRamLoad.Location = new System.Drawing.Point(20, 47);
+            this.psRamLoad.Margin = new System.Windows.Forms.Padding(7);
+            this.psRamLoad.MaximumValue = 100;
+            this.psRamLoad.Name = "psRamLoad";
+            this.psRamLoad.ProgressColor = System.Drawing.Color.DarkCyan;
+            this.psRamLoad.Size = new System.Drawing.Size(371, 25);
+            this.psRamLoad.TabIndex = 27;
+            this.psRamLoad.Value = 50;
             // 
             // lblRamTotal
             // 
@@ -937,11 +995,11 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI Symbol", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI Symbol", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(131, 110);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(449, 50);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(29, 25);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(22, 20);
             this.bunifuCustomLabel7.TabIndex = 25;
             this.bunifuCustomLabel7.Text = "%";
             // 
@@ -949,23 +1007,23 @@
             // 
             this.lblRamLoad.AutoSize = true;
             this.lblRamLoad.BackColor = System.Drawing.Color.Transparent;
-            this.lblRamLoad.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRamLoad.Font = new System.Drawing.Font("Segoe UI Symbol", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRamLoad.ForeColor = System.Drawing.Color.Black;
-            this.lblRamLoad.Location = new System.Drawing.Point(73, 100);
+            this.lblRamLoad.Location = new System.Drawing.Point(400, 42);
             this.lblRamLoad.Name = "lblRamLoad";
-            this.lblRamLoad.Size = new System.Drawing.Size(33, 37);
+            this.lblRamLoad.Size = new System.Drawing.Size(49, 30);
             this.lblRamLoad.TabIndex = 24;
-            this.lblRamLoad.Text = "0";
+            this.lblRamLoad.Text = "100";
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(119, 147);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(94, 85);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(32, 21);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(22, 13);
             this.bunifuCustomLabel1.TabIndex = 23;
             this.bunifuCustomLabel1.Text = "GB";
             // 
@@ -973,48 +1031,13 @@
             // 
             this.lblRamUse.AutoSize = true;
             this.lblRamUse.BackColor = System.Drawing.Color.Transparent;
-            this.lblRamUse.Font = new System.Drawing.Font("Segoe UI Symbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRamUse.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRamUse.ForeColor = System.Drawing.Color.Gray;
-            this.lblRamUse.Location = new System.Drawing.Point(64, 138);
+            this.lblRamUse.Location = new System.Drawing.Point(60, 84);
             this.lblRamUse.Name = "lblRamUse";
-            this.lblRamUse.Size = new System.Drawing.Size(63, 32);
+            this.lblRamUse.Size = new System.Drawing.Size(28, 15);
             this.lblRamUse.TabIndex = 22;
             this.lblRamUse.Text = "0.00";
-            // 
-            // bunifuCustomLabel21
-            // 
-            this.bunifuCustomLabel21.AutoSize = true;
-            this.bunifuCustomLabel21.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel21.ForeColor = System.Drawing.Color.Gray;
-            this.bunifuCustomLabel21.Location = new System.Drawing.Point(76, 79);
-            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
-            this.bunifuCustomLabel21.Size = new System.Drawing.Size(51, 21);
-            this.bunifuCustomLabel21.TabIndex = 8;
-            this.bunifuCustomLabel21.Text = "LOAD";
-            // 
-            // psRamLoad
-            // 
-            this.psRamLoad.animated = false;
-            this.psRamLoad.animationIterval = 5;
-            this.psRamLoad.animationSpeed = 300;
-            this.psRamLoad.BackColor = System.Drawing.Color.Transparent;
-            this.psRamLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("psRamLoad.BackgroundImage")));
-            this.psRamLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.psRamLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.psRamLoad.ForeColor = System.Drawing.Color.SeaGreen;
-            this.psRamLoad.LabelVisible = false;
-            this.psRamLoad.LineProgressThickness = 9;
-            this.psRamLoad.LineThickness = 10;
-            this.psRamLoad.Location = new System.Drawing.Point(28, 50);
-            this.psRamLoad.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.psRamLoad.MaxValue = 100;
-            this.psRamLoad.Name = "psRamLoad";
-            this.psRamLoad.ProgressBackColor = System.Drawing.Color.LightGray;
-            this.psRamLoad.ProgressColor = System.Drawing.SystemColors.MenuHighlight;
-            this.psRamLoad.Size = new System.Drawing.Size(158, 158);
-            this.psRamLoad.TabIndex = 7;
-            this.psRamLoad.Value = 0;
             // 
             // bunifuGauge9
             // 
@@ -1067,7 +1090,7 @@
             this.bunifuCards2.Controls.Add(this.psGPULoad);
             this.bunifuCards2.Font = new System.Drawing.Font("Segoe UI Historic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCards2.LeftSahddow = true;
-            this.bunifuCards2.Location = new System.Drawing.Point(603, 19);
+            this.bunifuCards2.Location = new System.Drawing.Point(360, 19);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 50;
@@ -1292,43 +1315,25 @@
             this.AppIcon.Visible = true;
             this.AppIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.AppIcon_DoubleClick);
             // 
-            // bunifuProgressBar3
-            // 
-            this.bunifuProgressBar3.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar3.BorderRadius = 5;
-            this.bunifuProgressBar3.Location = new System.Drawing.Point(18, 77);
-            this.bunifuProgressBar3.MaximumValue = 100;
-            this.bunifuProgressBar3.Name = "bunifuProgressBar3";
-            this.bunifuProgressBar3.ProgressColor = System.Drawing.Color.DarkCyan;
-            this.bunifuProgressBar3.Size = new System.Drawing.Size(201, 25);
-            this.bunifuProgressBar3.TabIndex = 12;
-            this.bunifuProgressBar3.Value = 50;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1486, 689);
+            this.ClientSize = new System.Drawing.Size(1486, 580);
             this.Controls.Add(this.menuTab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1486, 689);
-            this.MinimumSize = new System.Drawing.Size(1486, 689);
+            this.MaximumSize = new System.Drawing.Size(1486, 580);
+            this.MinimumSize = new System.Drawing.Size(1486, 580);
             this.Name = "Home";
             this.Text = "Hardware Monitor";
             this.Resize += new System.EventHandler(this.Home_Resize);
             this.menuTab.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
-            this.bunifuCards11.ResumeLayout(false);
-            this.bunifuCards11.PerformLayout();
-            this.bunifuCards10.ResumeLayout(false);
-            this.bunifuCards10.PerformLayout();
-            this.bunifuCards9.ResumeLayout(false);
-            this.bunifuCards9.PerformLayout();
+            this.bunifuCards12.ResumeLayout(false);
+            this.bunifuCards12.PerformLayout();
             this.bunifuCards8.ResumeLayout(false);
             this.bunifuCards8.PerformLayout();
-            this.bunifuCards7.ResumeLayout(false);
-            this.bunifuCards7.PerformLayout();
             this.bunifuCards5.ResumeLayout(false);
             this.bunifuCards5.PerformLayout();
             this.bunifuCards4.ResumeLayout(false);
@@ -1371,8 +1376,6 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar psCPULoad;
         private Bunifu.Framework.UI.BunifuCustomLabel lblGPUFan;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar psRamLoad;
         private System.Windows.Forms.Timer timer;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCPULoad;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCPUName;
@@ -1416,21 +1419,24 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private Bunifu.Framework.UI.BunifuCards bunifuCards8;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel24;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel26;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards9;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel29;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel30;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards11;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel33;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel34;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards10;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar2;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel31;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel32;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar3;
+        private Bunifu.Framework.UI.BunifuProgressBar psRamLoad;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel35;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel36;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblRamFree;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards12;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel38;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel39;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblVmFree;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel41;
+        private Bunifu.Framework.UI.BunifuProgressBar psVm;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblVmTotal;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel43;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblVmLoad;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel45;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblVmUsed;
+        private Bunifu.Framework.UI.BunifuGauge bunifuGauge1;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel47;
     }
 }
