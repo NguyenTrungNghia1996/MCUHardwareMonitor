@@ -11,6 +11,7 @@ D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Release\XanderUI.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Release\HidLibrary.dll
 D:\MCU\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.xml
+D:\MCU\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csprojAssemblyReference.cache
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.About.resources
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.Home.resources
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.Properties.Resources.resources

@@ -53,3 +53,4 @@ D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.GenerateResource.
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
 D:\MCU\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
+D:\MCU\MCUHardwareMonitor\MCU\bin\Debug\Bunifu_UI_v1.52.dll
