@@ -464,26 +464,6 @@ namespace MCU
             base.Show();
         }
 
-        private void Home_Resize(object sender, EventArgs e)
-        {
-            if (this.WindowState != FormWindowState.Normal)
-            {
-                this.Hide();
-                AppIcon.ShowBalloonTip(500, "Đang Chạy Thu Nhỏ !", "Minimize to tray!", ToolTipIcon.Info);
-            }
-            else
-            {
-                //this.Visible = true;
-                this.Show();
-                this.WindowState = FormWindowState.Normal;
-                this.Activate();
-                this.Focus();
-                this.ShowInTaskbar = true;
-            }
-        }
-
-       
-
         private void btnWired_Click(object sender, EventArgs e)
         {
             try
