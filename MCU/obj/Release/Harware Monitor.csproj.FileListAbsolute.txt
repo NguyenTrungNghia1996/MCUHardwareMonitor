@@ -19,19 +19,7 @@ D:\MCU\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.GenerateResourc
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.CopyComplete
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.exe
 D:\MCU\MCUHardwareMonitor\MCU\obj\Release\MCU.pdb
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MCU.exe.config
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MCU.exe
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MCU.pdb
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.Design.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.Fonts.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\XanderUI.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.xml
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.About.resources
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.Home.resources
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.Properties.Resources.resources
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.GenerateResource.cache
-D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csproj.CopyComplete
-D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.exe
-D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.pdb
