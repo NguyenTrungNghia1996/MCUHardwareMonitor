@@ -157,6 +157,8 @@ namespace MCU
             base.WindowState = FormWindowState.Normal;  // Mở cửa sổ Connect
             base.ShowInTaskbar = true;
             base.Visible = false;
+            //base.Activate();
+            base.Focus();
             base.Show();
         }
 
@@ -461,6 +463,7 @@ namespace MCU
             base.WindowState = FormWindowState.Normal; 
             base.ShowInTaskbar = true;
             base.Visible = false;
+            base.Focus();
             base.Show();
         }
 
@@ -539,6 +542,30 @@ namespace MCU
             else
             {
                 AppIcon.ShowBalloonTip(500, "Sẽ không chạy cùng Windows", "Will not run with Windows", ToolTipIcon.Info);
+            }
+        }
+
+        private void Home_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Normal)
+            {
+                base.ShowInTaskbar = false;
+                base.Visible = true;
+                AppIcon.ShowBalloonTip(500, "Đang Chạy Thu Nhỏ !", "Minimize to tray!", ToolTipIcon.Info);
+            }
+            else
+            {
+                //this.Visible = true;
+                //this.Show();
+                // this.WindowState = FormWindowState.Normal;
+                //this.Activate();
+                // this.Focus();
+                //this.ShowInTaskbar = true;
+                base.WindowState = FormWindowState.Normal;
+                base.ShowInTaskbar = true;
+                base.Visible = false;
+                base.Focus();
+                base.Show();
             }
         }
     }

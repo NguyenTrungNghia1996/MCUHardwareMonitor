@@ -27,9 +27,7 @@ D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.dll
 D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\MetroFramework.Fonts.dll
 D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.dll
 D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\XanderUI.dll
-D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\HidLibrary.dll
 D:\GITHUB\MCUHardwareMonitor\MCU\bin\Release\Newtonsoft.Json.xml
-D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\Harware Monitor.csprojAssemblyReference.cache
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.About.resources
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.Home.resources
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Release\MCU.Properties.Resources.resources

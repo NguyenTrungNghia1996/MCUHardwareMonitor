@@ -1327,6 +1327,7 @@
             this.MinimumSize = new System.Drawing.Size(1486, 580);
             this.Name = "Home";
             this.Text = "Hardware Monitor";
+            this.Resize += new System.EventHandler(this.Home_Resize);
             this.menuTab.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
             this.bunifuCards12.ResumeLayout(false);
