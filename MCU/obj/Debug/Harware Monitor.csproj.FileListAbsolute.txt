@@ -70,3 +70,20 @@ D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.GenerateResour
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MCU.exe.config
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MCU.exe
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MCU.pdb
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Design.dll
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.dll
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\MetroFramework.Fonts.dll
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\Newtonsoft.Json.dll
+D:\GIT\MCUHardwareMonitor\MCU\bin\Debug\Newtonsoft.Json.xml
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csprojAssemblyReference.cache
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.About.resources
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.Home.resources
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.Properties.Resources.resources
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.GenerateResource.cache
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CoreCompileInputs.cache
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CopyComplete
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
+D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb

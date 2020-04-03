@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harware Monitor", "MCU\Harware Monitor.csproj", "{C8806CA2-F1D3-42AF-9268-A895A753E12E}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{ECF7D24C-465A-4944-84A7-A6CAF3B4301B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,8 +15,6 @@ Global
 		{C8806CA2-F1D3-42AF-9268-A895A753E12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8806CA2-F1D3-42AF-9268-A895A753E12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8806CA2-F1D3-42AF-9268-A895A753E12E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECF7D24C-465A-4944-84A7-A6CAF3B4301B}.Debug|Any CPU.ActiveCfg = Debug
-		{ECF7D24C-465A-4944-84A7-A6CAF3B4301B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
