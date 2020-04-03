@@ -399,7 +399,7 @@ namespace MCU
             }
             if (lblStatusWired.Text == "Connected")
             {
-                serialPort1.Write(obj);
+                serialPort1.Write(obj+"/n");
             }
         }
         private void btnConnectWIFI_Click(object sender, EventArgs e)
