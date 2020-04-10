@@ -21,8 +21,15 @@ namespace MCU
         readonly private Computer thisComputer = new Computer();
         public TcpClient client = new TcpClient();
         NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
+        string cpuName = "", gpuName = "", strNw = "";
+        float cpuLoad = 0, cpuTemp = 0;
+        float gpuLoad = 0, gpuTemp = 0, gpuFan = 0, gpuFanLoad = 0;
+        float ramLoad = 0, ramUse = 0, totalRam = 0;
+        float vmLoad = 0, vmUse = 0, vmTotal = 0;
+        float upload = 0, download = 0;
         public Home()
         {
+           
             InitializeComponent();
             timer.Interval = 1000;
             timer.Start();
@@ -69,7 +76,7 @@ namespace MCU
                 checkBox2.Checked = false;
             }
             /*WIRED*/
-            serialPort1.BaudRate = 9600;
+            serialPort1.BaudRate = 115200;
             serialPort1.Parity = Parity.None;
             serialPort1.StopBits = StopBits.One;
             serialPort1.DataBits = 8;
@@ -174,8 +181,9 @@ namespace MCU
         public class Infomation
         {
             public Processor CPU { get; set; }
-            public Ram RAM { get; set; }
+           
             public Graphic GPU { get; set; }
+            public Ram RAM { get; set; }
             public Net Net { get; set; }
         }
 
@@ -206,13 +214,6 @@ namespace MCU
         }
         private void timer_Tick(object sender, EventArgs e)
         {
-            string cpuName = "", gpuName = "", strNw="";
-            float cpuLoad = 0, cpuTemp = 0;
-            float gpuLoad = 0, gpuTemp = 0, gpuFan = 0, gpuFanLoad = 0;
-            float ramLoad = 0, ramUse = 0, totalRam = 0;
-            float vmLoad = 0, vmUse = 0, vmTotal = 0;
-            float upload = 0, download = 0;
-
             /*-------------------------------------Read Info-------------------------------------*/
             foreach (var hardware in thisComputer.Hardware)
             {
@@ -239,7 +240,40 @@ namespace MCU
                         }
                     }
                 }
+                /*---------------------------------GPU---------------------------------*/
+                if (hardware.HardwareType == HardwareType.GpuAmd || hardware.HardwareType == HardwareType.GpuNvidia)
+                {
+                    gpuName = hardware.Name;
+                    lblGPUName.Text = gpuName;
+                    foreach (var sensor in hardware.Sensors)
+                    {
+                        if (sensor.SensorType == SensorType.Load && sensor.Name == "GPU Core")
+                        {
+                            gpuLoad = sensor.Value.Value;
+                            psGPULoad.Value = (int)Math.Round(gpuLoad);
+                            lblGPULoad.Text = Math.Round(gpuLoad).ToString();
+                        }
 
+                        if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
+                        {
+                            gpuTemp = sensor.Value.GetValueOrDefault();
+                            psGPUTemp.Value = (int)Math.Round(gpuTemp);
+                            lblGPUTemp.Text = gpuTemp.ToString();
+                        }
+                        if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
+                        {
+                            gpuFan = sensor.Value.GetValueOrDefault();
+                            lblGPUFan.Text = Math.Round(gpuFan).ToString();
+                        }
+                        if (sensor.SensorType == SensorType.Control && sensor.Name == "GPU Fan")
+                        {
+                            gpuFanLoad = sensor.Value.GetValueOrDefault();
+                            psGPUFanLoad.Value = (int)Math.Round(gpuFanLoad);
+                        }
+
+                    }
+
+                }
                 /*---------------------------------RAM---------------------------------*/
                 if (hardware.HardwareType == HardwareType.Memory)
                 {
@@ -284,40 +318,7 @@ namespace MCU
                     }
                 }
 
-                /*---------------------------------GPU---------------------------------*/
-                if (hardware.HardwareType == HardwareType.GpuAmd || hardware.HardwareType == HardwareType.GpuNvidia)
-                {
-                    gpuName = hardware.Name;
-                    lblGPUName.Text = gpuName;
-                    foreach (var sensor in hardware.Sensors)
-                    {
-                        if (sensor.SensorType == SensorType.Load && sensor.Name == "GPU Core")
-                        {
-                            gpuLoad = sensor.Value.Value;
-                            psGPULoad.Value = (int)Math.Round(gpuLoad);
-                            lblGPULoad.Text = Math.Round(gpuLoad).ToString();
-                        }
-
-                        if (sensor.SensorType == SensorType.Temperature && sensor.Name == "GPU Core")
-                        {
-                            gpuTemp = sensor.Value.GetValueOrDefault();
-                            psGPUTemp.Value = (int)Math.Round(gpuTemp);
-                            lblGPUTemp.Text = gpuTemp.ToString();
-                        }
-                        if (sensor.SensorType == SensorType.Fan && sensor.Name == "GPU Fan")
-                        {
-                            gpuFan = sensor.Value.GetValueOrDefault();
-                            lblGPUFan.Text = Math.Round(gpuFan).ToString();
-                        }
-                        if (sensor.SensorType == SensorType.Control && sensor.Name == "GPU Fan")
-                        {
-                            gpuFanLoad = sensor.Value.GetValueOrDefault();
-                            psGPUFanLoad.Value = (int)Math.Round(gpuFanLoad);
-                        }
-
-                    }
-
-                }
+                
                 if(hardware.HardwareType == HardwareType.Network)
                 {
                     foreach(var sensor in hardware.Sensors)
@@ -399,7 +400,8 @@ namespace MCU
             }
             if (lblStatusWired.Text == "Connected")
             {
-                serialPort1.Write(obj+"*");
+                byte[] data = Encoding.ASCII.GetBytes(obj + "\r\n");
+                serialPort1.Write(obj + "\r\n");
             }
         }
         private void btnConnectWIFI_Click(object sender, EventArgs e)
