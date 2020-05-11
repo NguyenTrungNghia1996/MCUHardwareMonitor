@@ -60,7 +60,7 @@
     </Reference>
     <Reference Include="LibreHardwareMonitorLib, Version=0.8.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\nghia\Desktop\Libre Hardware Monitor 01.2020\LibreHardwareMonitorLib.dll</HintPath>
+      <HintPath>C:\Users\nghia\Desktop\Release\LibreHardwareMonitorLib.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>

@@ -29,11 +29,11 @@ namespace MCU
         float upload = 0, download = 0;
         public Home()
         {
-           
+
             InitializeComponent();
             timer.Interval = 1000;
             timer.Start();
-            
+
             AddMenu();
             this.thisComputer.IsCpuEnabled = true;
             this.thisComputer.IsGpuEnabled = true;
@@ -41,6 +41,7 @@ namespace MCU
             this.thisComputer.IsMotherboardEnabled = true;
             this.thisComputer.IsMemoryEnabled = true;
             this.thisComputer.IsNetworkEnabled = true;
+            this.thisComputer.IsControllerEnabled = true;
             this.thisComputer.Open();
             /*AUTO*/
             if (ConfigurationManager.AppSettings["autoConnectWifi"].ToString().ToLower().Equals("true"))
@@ -177,7 +178,7 @@ namespace MCU
         public class Infomation
         {
             public Processor CPU { get; set; }
-           
+
             public Graphic GPU { get; set; }
             public Ram RAM { get; set; }
             public Net Net { get; set; }
@@ -210,6 +211,7 @@ namespace MCU
         }
         private void timer_Tick(object sender, EventArgs e)
         {
+            //string v = thisComputer.Hardware[5].HardwareType
             /*-------------------------------------Read Info-------------------------------------*/
             foreach (var hardware in thisComputer.Hardware)
             {
@@ -314,20 +316,22 @@ namespace MCU
                     }
                 }
 
-                
-                if(hardware.HardwareType == HardwareType.Network)
+                if (hardware.Name == "Samsung SSD 960 EVO 250GB") {
+                    string name = hardware.Name;
+                }
+                if (hardware.HardwareType == HardwareType.Network)
                 {
-                    foreach(var sensor in hardware.Sensors)
-                    {   
+                    foreach (var sensor in hardware.Sensors)
+                    {
                         if (sensor.SensorType == SensorType.Throughput && sensor.Name == "Upload Speed")
                         {
-                           upload = (sensor.Value.GetValueOrDefault())*8/ 1048576;
+                            upload = (sensor.Value.GetValueOrDefault()) * 8 / 1048576;
                         }
                         if (sensor.SensorType == SensorType.Throughput && sensor.Name == "Download Speed")
                         {
-                            download = (sensor.Value.GetValueOrDefault()) *8/ 1048576;
+                            download = (sensor.Value.GetValueOrDefault()) * 8 / 1048576;
                         }
-                        strNw = Math.Round(download,2).ToString("F2")+"/"+ Math.Round(upload, 2).ToString("F2");
+                        strNw = Math.Round(download, 2).ToString("F2") + "/" + Math.Round(upload, 2).ToString("F2");
                         if (strNw.Length > 10)
                         {
                             strNw = "Connecting...";
@@ -338,7 +342,7 @@ namespace MCU
                         }
                     }
                 }
-               
+
             }
             Processor dataCPU = new Processor
             {
@@ -458,7 +462,7 @@ namespace MCU
 
         private void AppIcon_DoubleClick(object sender, EventArgs e)
         {
-            base.WindowState = FormWindowState.Normal; 
+            base.WindowState = FormWindowState.Normal;
             base.ShowInTaskbar = true;
             base.Visible = false;
             base.Focus();

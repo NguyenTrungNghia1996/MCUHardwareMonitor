@@ -89,3 +89,6 @@ D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.exe
 D:\GIT\MCUHardwareMonitor\MCU\obj\Debug\MCU.pdb
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csprojAssemblyReference.cache
 D:\GITHUB\MCUHardwareMonitor\MCU\obj\Debug\Harware Monitor.csproj.CoreCompileInputs.cache
+D:\GITHUB\MCUHardwareMonitor\MCU\bin\Debug\LibreHardwareMonitorLib.dll
+D:\GITHUB\MCUHardwareMonitor\MCU\bin\Debug\HidSharp.dll
+D:\GITHUB\MCUHardwareMonitor\MCU\bin\Debug\LibreHardwareMonitorLib.pdb
