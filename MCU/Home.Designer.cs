@@ -48,7 +48,6 @@
             this.bunifuCards8 = new Bunifu.Framework.UI.BunifuCards();
             this.bunifuCustomLabel28 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.bunifuCards5 = new Bunifu.Framework.UI.BunifuCards();
             this.lblNet = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -343,7 +342,6 @@
             this.bunifuCards8.color = System.Drawing.Color.Tomato;
             this.bunifuCards8.Controls.Add(this.bunifuCustomLabel28);
             this.bunifuCards8.Controls.Add(this.checkBox2);
-            this.bunifuCards8.Controls.Add(this.checkBox1);
             this.bunifuCards8.LeftSahddow = true;
             this.bunifuCards8.Location = new System.Drawing.Point(1200, 295);
             this.bunifuCards8.Name = "bunifuCards8";
@@ -366,25 +364,13 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(16, 88);
+            this.checkBox2.Location = new System.Drawing.Point(16, 52);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(164, 29);
             this.checkBox2.TabIndex = 2;
             this.checkBox2.Text = "Start Minimized";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI Historic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(16, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(190, 29);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Start with windows";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // bunifuCards5
             // 
@@ -1377,7 +1363,6 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar psCPULoad;
         private Bunifu.Framework.UI.BunifuCustomLabel lblGPUFan;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
-        private System.Windows.Forms.Timer timer;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCPULoad;
         private Bunifu.Framework.UI.BunifuCustomLabel lblCPUName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel23;
@@ -1417,7 +1402,6 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards5;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNet;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private Bunifu.Framework.UI.BunifuCards bunifuCards8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel28;
@@ -1439,5 +1423,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblVmUsed;
         private Bunifu.Framework.UI.BunifuGauge bunifuGauge1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel47;
+        public System.Windows.Forms.Timer timer;
     }
 }

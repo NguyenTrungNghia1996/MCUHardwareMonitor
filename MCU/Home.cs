@@ -59,10 +59,6 @@ namespace MCU
             {
                 swWiredAuto.Value = false;
             }
-            if (ConfigurationManager.AppSettings["startTray"].ToString().ToLower().Equals("true"))
-            {
-               checkBox1.Checked = true;
-            }
             if (ConfigurationManager.AppSettings["state"].ToString().ToLower().Equals("true"))
             {
                 base.WindowState = FormWindowState.Minimized;
@@ -499,7 +495,7 @@ namespace MCU
             }
             catch
             {
-                AppIcon.ShowBalloonTip(5000, "Lỗi kêt nối", "Không tìm thấy COM", ToolTipIcon.Warning);
+                AppIcon.ShowBalloonTip(5000, "Lỗi kêt nối", "Không tìm thấy PORT", ToolTipIcon.Warning);
             }
 
         }
@@ -532,21 +528,6 @@ namespace MCU
             _config.AppSettings.Settings["autoConnectWired"].Value = swWiredAuto.Value.ToString();
             _config.Save();
         }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            _config.AppSettings.Settings["startTray"].Value = checkBox1.Checked.ToString();
-            _config.Save();
-            if (checkBox1.Checked)
-            {
-                AppIcon.ShowBalloonTip(500, "Sẽ chạy cùng Windows ", "Will run with Windows", ToolTipIcon.Info);
-            }
-            else
-            {
-                AppIcon.ShowBalloonTip(500, "Sẽ không chạy cùng Windows", "Will not run with Windows", ToolTipIcon.Info);
-            }
-        }
-
         private void Home_Resize(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Normal)
